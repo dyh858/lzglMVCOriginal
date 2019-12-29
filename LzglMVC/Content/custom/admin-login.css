@@ -1,0 +1,9 @@
+﻿.container-small
+{
+    max-width:500px;
+}
+.btn-primary
+{
+    background:#3e3a39;
+    border-color:#2f2d2c;
+}

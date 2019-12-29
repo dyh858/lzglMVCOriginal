@@ -1,0 +1,109 @@
+﻿/*左侧边栏*/
+.side-bar .list-group-item
+{
+    border:0;
+    margin-bottom:5px;
+}
+.side-bar .list-group-item.active {
+    background-color:#3e3a39/* #ea0c3c*/;
+}
+/*中间类容*/
+.news-list-item
+{
+    padding-top:15px;
+    padding-bottom :15px;
+    border-bottom:1px solid #eee;
+}
+.news-list-item:first-child
+{
+    padding-top:0;
+}
+.news-list-item .title
+{
+    display: block;
+    color: #444;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.news-list-item .title:hover {
+    color: #337ab7;
+}
+.news-list-item .info {
+    color: #888;
+}
+.avatar
+{
+    display:inline-block;
+}
+.avatar img
+{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-right:5px;
+}
+
+/*右侧边栏*/
+.side-bar-card
+{
+    background:rgba(0,0,0,.05);
+    margin-top:15px;
+    padding:10px 0;
+}
+.side-bar-card.flag
+{
+    padding:20px 0;
+}
+.side-bar-card .text-lg
+{
+    font-weight:700;
+    font-size:150%;
+}
+.side-bar-card .card-title
+{
+    font-size:18px;
+    font-weight:bold;
+    padding:0 15px;
+}
+.side-bar-card .card-body .list .item
+{
+    padding:10px 15px;
+}
+.side-bar-card .card-body .list .item:hover
+{
+    background:rgba(0,0,0,.05);
+}
+.card-body .list .item .title
+{
+    display:block;
+    padding-bottom:5px;
+    color: #444;
+    margin-bottom:5px;
+}
+.card-body .list .item .title:hover
+{
+    color: #337ab7;
+}
+.card-body .list .item .desc
+{
+    color:#999;
+    font-size:12px;
+}
+.logo {
+	padding:0;
+}
+#myCarousel {
+	margin: 50px 0 0 0;
+}
+#navbar-collapse ul {
+	margin-top:0;
+}
+.carousel-inner img {
+	margin: 0 auto;
+}
+.carousel-control {
+	font-size: 100px;
+}

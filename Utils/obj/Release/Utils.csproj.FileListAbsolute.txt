@@ -1,0 +1,5 @@
+E:\C#\LzglMVC\Utils\bin\Release\Utils.dll
+E:\C#\LzglMVC\Utils\bin\Release\Utils.pdb
+E:\C#\LzglMVC\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
+E:\C#\LzglMVC\Utils\obj\Release\Utils.dll
+E:\C#\LzglMVC\Utils\obj\Release\Utils.pdb

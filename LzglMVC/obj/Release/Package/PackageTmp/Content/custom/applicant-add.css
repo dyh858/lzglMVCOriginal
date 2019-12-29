@@ -1,0 +1,48 @@
+﻿#add
+{
+    margin:80px auto 0 auto;
+    width:600px;
+    height:500px;
+    /*border:1px solid red;*/
+}
+#add .row
+{
+    margin-top:10px;
+    position:relative ;
+}
+
+#add .row:first-child
+    {
+        margin-top: 0;
+    }
+ #add .left{
+    padding:0;
+    margin:0;
+}
+#add .right
+{
+    padding:5px 0 0 20px;
+}
+#add .left
+{
+    width:200px;/*border:1px solid redborder:1px solid blue;    border:1px solid red;*/
+    text-align:right;
+    height:34px;
+    line-height:34px;
+    font-weight:400;
+    font-size:14px;
+}
+#add .form-control
+{
+    width:300px;
+}
+#add .btn
+{
+    position:absolute;
+    width:100px;
+    right:100px;
+}
+[data-valmsg-replace=true]
+{
+    color:red;   
+}

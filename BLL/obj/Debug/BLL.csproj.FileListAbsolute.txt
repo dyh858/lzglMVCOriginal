@@ -1,0 +1,11 @@
+E:\C#\LzglMVC\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\C#\LzglMVC\BLL\bin\Debug\BLL.dll
+E:\C#\LzglMVC\BLL\bin\Debug\BLL.pdb
+E:\C#\LzglMVC\BLL\bin\Debug\DAL.dll
+E:\C#\LzglMVC\BLL\bin\Debug\Models.dll
+E:\C#\LzglMVC\BLL\bin\Debug\Utils.dll
+E:\C#\LzglMVC\BLL\bin\Debug\DAL.pdb
+E:\C#\LzglMVC\BLL\bin\Debug\Models.pdb
+E:\C#\LzglMVC\BLL\bin\Debug\Utils.pdb
+E:\C#\LzglMVC\BLL\obj\Debug\BLL.dll
+E:\C#\LzglMVC\BLL\obj\Debug\BLL.pdb

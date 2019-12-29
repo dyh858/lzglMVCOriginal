@@ -1,0 +1,75 @@
+﻿@model Models.Applicant
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/HRMLayout.cshtml";
+}
+<div id="A4">
+    <div>
+        <h3 class="title">应聘人员登记表</h3>
+    </div>
+    <table border="1">
+        <tr class="height35">
+            <td class="width2" style="color: red;">姓名</td>
+            <td class="width3" colspan="2">@Model.AName</td>
+            <td class="width4">性别</td>
+            <td class="width4">@Model.Gender</td>
+            <td class="width1">出生年月</td>
+            <td class="width1">@Model.Birthdate.ToString("yyyy-MM-dd")</td>
+            <td class="width5" rowspan="5"></td>
+        </tr>
+        <tr class="height35">
+            <td class="width1" colspan="2">文化程度</td>
+            <td class="width1">@Model.Education</td>
+            <td class="width4">民族</td>
+            <td class="width4">@Model.Nationality</td>
+            <td class="width1">政治面貌</td>
+            <td class="width1">&nbsp;</td>
+        </tr>
+        <tr class="height35">
+            <td class="width1" colspan="2">手机号码</td>
+            <td class="auto-style30" colspan="2">@Model.Mobilephone</td>
+            <td class="auto-style18">推荐人</td>
+            <td class="auto-style30" colspan="2"></td>
+        </tr>
+        <tr class="height35">
+            <td class="width1" colspan="2">身份证</td>
+            <td class="auto-style33" colspan="5">@Model.IdCard</td>
+        </tr>
+        <tr class="height35">
+            <td class="width1" colspan="2">户籍地址</td>
+            <td class="auto-style31" colspan="5">@Model.Address</td>
+        </tr>
+        <tr class="height35">
+            <td class="width1" colspan="2">应聘职位</td>
+            <td class="auto-style25" colspan="6">
+                <input id="Checkbox1" type="checkbox" />采煤工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="Checkbox2" type="checkbox" />掘进工&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="Checkbox3" type="checkbox" />井下电钳工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id="Checkbox4" type="checkbox" />瓦斯检查工</td>
+        </tr>
+        <tr class="height2">
+            <td class="width1" colspan="2">资格审查</td>
+            <td class="auto-style26" colspan="6"></td>
+        </tr>
+        <tr class="height2">
+            <td class="width1" colspan="2">岗前体检</td>
+            <td class="auto-style27" colspan="6"></td>
+        </tr>
+        <tr class="height2">
+            <td class="width1" colspan="2">入职培训</td>
+            <td class="auto-style28" colspan="6"></td>
+        </tr>
+        <tr class="height2">
+            <td class="width1" colspan="2">住房需求</td>
+            <td class="auto-style29" colspan="6"></td>
+        </tr>
+    </table>
+    <div>
+        <span class="space">部门分配：</span>
+        <span>应聘人员签字：</span>
+    </div>
+
+</div>
+
+<button type="button" class="btn btn-primary" id="btn">打印</button>

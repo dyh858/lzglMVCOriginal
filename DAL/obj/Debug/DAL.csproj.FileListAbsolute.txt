@@ -1,0 +1,9 @@
+E:\C#\LzglMVC\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\C#\LzglMVC\DAL\bin\Debug\DAL.dll
+E:\C#\LzglMVC\DAL\bin\Debug\DAL.pdb
+E:\C#\LzglMVC\DAL\bin\Debug\Models.dll
+E:\C#\LzglMVC\DAL\bin\Debug\Utils.dll
+E:\C#\LzglMVC\DAL\bin\Debug\Models.pdb
+E:\C#\LzglMVC\DAL\bin\Debug\Utils.pdb
+E:\C#\LzglMVC\DAL\obj\Debug\DAL.dll
+E:\C#\LzglMVC\DAL\obj\Debug\DAL.pdb

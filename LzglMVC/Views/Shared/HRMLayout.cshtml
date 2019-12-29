@@ -1,0 +1,42 @@
+﻿@using Models;    
+@{
+    SysAdmin admin= (SysAdmin)Session["CurrentAdmin"];
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/img/eternal.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/custom/layout.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="@Url.Action("Index","Home",new{})" class="navbar-brand" style="padding: 0;"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 0">
+                    <li class="active"><a href="@Url.Action("Index","Home",new{})"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                    <li><a href="@Url.Action("ShowAll", "Applicant", new { })"><span class="glyphicon glyphicon-list"></span> 浏览</a></li>
+                    <li><a target="_blank" href="@Url.Action("Index", "Applicant", new { })"><span class="glyphicon glyphicon-plus"></span> 增加</a></li>
+                    <li><a target="_blank" href="@Url.Action("DeptEmp", "Employee", new { })"><span class="glyphicon glyphicon-fire"></span> 雇员</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> @admin.AdminName</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+     <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>     
+</body>
+</html>
