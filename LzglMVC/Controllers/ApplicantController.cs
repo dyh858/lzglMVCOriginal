@@ -7,12 +7,15 @@ using Models;
 using BLL;
 namespace LzglMVC.Controllers
 {
-    public class ApplicantController : Controller
+    [Authorize]
+     public class ApplicantController : Controller
     {
+         
          public ActionResult Index()
         {
             return View("ApplicantAdd");
         }
+         
         /// <summary>
         /// 添加一个新的应聘人员
         /// </summary>
@@ -47,6 +50,7 @@ namespace LzglMVC.Controllers
         /// 显示所有应聘人员
         /// </summary>
         /// <returns></returns>
+        [HandleError(ExceptionType=typeof(System.Exception),View="Error")]
         public ActionResult ShowAll()
         {
             List<Applicant> list = new ApplicantManager().list();

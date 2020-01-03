@@ -1,17 +1,20 @@
 ﻿@using Models;    
 @{
     SysAdmin admin= (SysAdmin)Session["CurrentAdmin"];
+    string AdminName=User.Identity.Name;
 }
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/img/eternal.png" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/custom/layout.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -30,13 +33,12 @@
                     <li><a href="@Url.Action("ShowAll", "Applicant", new { })"><span class="glyphicon glyphicon-list"></span> 浏览</a></li>
                     <li><a target="_blank" href="@Url.Action("Index", "Applicant", new { })"><span class="glyphicon glyphicon-plus"></span> 增加</a></li>
                     <li><a target="_blank" href="@Url.Action("DeptEmp", "Employee", new { })"><span class="glyphicon glyphicon-fire"></span> 雇员</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> @admin.AdminName</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> @AdminName</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     @RenderBody()
-     <script src="~/Scripts/jquery.js"></script>
-    <script src="~/Scripts/bootstrap.js"></script>     
+    
 </body>
 </html>

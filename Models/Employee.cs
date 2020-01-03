@@ -11,7 +11,7 @@ namespace Models
         public string Empid { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
-        public DateTime Birthdate { get; set; }
+        public String Birthdate { get; set; }
         public string Idcard { get; set; }
         public string MobilePhone { get; set; }
         public string Address { get; set; }

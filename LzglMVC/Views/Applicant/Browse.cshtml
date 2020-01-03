@@ -28,7 +28,7 @@
                     <a target="_blank" href="@Url.Action("Show", "Applicant", new { aid = vo.AId })">@vo.AName</a>
                 </td>
                 <td>@vo.dispGender()</td>
-                <td>@vo.Birthdate</td>
+                <td>@vo.Birthdate.ToString("yyyy-MM-dd")</td>
                 <td>@vo.IdCard</td>
                 <td>@vo.Nationality</td>
                 <td>@vo.Mobilephone</td>

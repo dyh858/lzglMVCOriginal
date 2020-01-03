@@ -2,3 +2,4 @@ E:\C#\LzglMVC\Models\bin\Release\Models.dll
 E:\C#\LzglMVC\Models\bin\Release\Models.pdb
 E:\C#\LzglMVC\Models\obj\Release\Models.dll
 E:\C#\LzglMVC\Models\obj\Release\Models.pdb
+E:\C#\LzglMVC\Models\obj\Release\Models.csprojResolveAssemblyReference.cache

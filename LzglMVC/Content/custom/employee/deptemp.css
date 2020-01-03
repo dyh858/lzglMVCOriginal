@@ -1,0 +1,13 @@
+﻿#emp
+{
+    margin-top:60px;
+    overflow:scroll; 
+}
+#emp table td
+{
+    white-space: nowrap;
+}
+#dept
+{
+    margin-top:60px;
+}

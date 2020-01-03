@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using BLL;
+using System.Web.Security;
 
 namespace StudentManagerMVC.Controllers
 {
@@ -16,6 +17,7 @@ namespace StudentManagerMVC.Controllers
             return View("AdminLogin");
         }
         //登录
+        [HttpPost]
         public ActionResult AdminLogin(SysAdmin vo)
         {
             if(ModelState.IsValid)
@@ -29,29 +31,38 @@ namespace StudentManagerMVC.Controllers
                 objAdmin = vo;
                 //调用业务逻辑
                 objAdmin = new SysAdminManager().AdminLogin(objAdmin);
+                //用户登录是否成功
                 if (objAdmin != null)
                 {
+                    //为当前用户提供一个身份验证票证，并将该票证添加到Cookie
+                    FormsAuthentication.SetAuthCookie(objAdmin.AdminName, false);
+                    ViewBag.info = "欢迎您：" + objAdmin.AdminName;
                     ViewData["info"] = "欢迎您：" + objAdmin.AdminName;
                     return View("HRManage", objAdmin);
                 }
                 else
                 {
+                    ViewBag.info = "用户名或密码错误！";
                     ViewData["info"] = "用户名或密码错误！";
-                    return View("");
                 }
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
+        //直接到HRManage页面
+        [Authorize]
+        public ActionResult HRManage(SysAdmin vo)
+        {
+            return View(vo);
+        }
+        //退出登录
         public ActionResult Destroy()
         {
             if ((SysAdmin)Session["CurrentAdmin"] != null)
             {
-                Session.Remove("CurrentAdmin");
+                FormsAuthentication.SignOut();//注销Cookie
+                Session.Remove("CurrentAdmin");//注销Session
             }
-            return View("Index");
+            return RedirectToAction("Index", "Home");
         }
         /// <summary>
         /// 注册
@@ -61,7 +72,7 @@ namespace StudentManagerMVC.Controllers
         {
             return View();
         }
-
+        
         public ActionResult RegisterResult(SysAdmin vo)
         {
             if (ModelState.IsValid)

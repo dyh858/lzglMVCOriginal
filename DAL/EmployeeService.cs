@@ -26,7 +26,7 @@ namespace DAL
                 {
                     Empid=objReader["职工号"].ToString(),
                     Name=objReader["姓名"].ToString(),
-                    Birthdate=Convert.ToDateTime(objReader["出生日期"]),
+                    Birthdate=Convert.ToDateTime(objReader["出生日期"]).ToString("yyyy-MM-dd"),
                     Idcard=objReader["身份证号码"].ToString(),
                     Gender = objReader["性别"].ToString(),
                     MobilePhone=objReader["手机长号"].ToString(),
@@ -57,7 +57,7 @@ namespace DAL
                     Empid=objReader["职工号"].ToString(),
                     Name = objReader["姓名"].ToString(),
                     Gender = objReader["性别"].ToString(),
-                    Birthdate = Convert.ToDateTime(objReader["出生日期"]),
+                    Birthdate = Convert.ToDateTime(objReader["出生日期"]).ToString("yyyy-MM-dd"),
                     Idcard = objReader["身份证号码"].ToString(),
                     MobilePhone = objReader["手机长号"].ToString(),
                     Address = objReader["住址"].ToString(),
