@@ -9,7 +9,7 @@
     <h1>登录
         <small>没有账号？<a href="@Url.Action("Signup","SysAdmin",new{})">注册</a></small>
     </h1>
-    <form action="/SysAdmin/AdminLogin" method="post">
+    <form action="@Url.Action("AdminLogin","SysAdmin")" method="post">
         <div class="form-group">
             <label>用户名：</label>
             <input type="text" class="form-control" name="LoginId"/>@Html.ValidationMessage("LoginId")

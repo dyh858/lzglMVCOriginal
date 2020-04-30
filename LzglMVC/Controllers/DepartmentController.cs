@@ -18,6 +18,7 @@ namespace LzglMVC.Controllers
         {
             return View();
         }
+
         public ActionResult GetDeptList()
         {
             List<Department> DeptList = new DepartmentManager().list();

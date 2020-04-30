@@ -14,22 +14,22 @@
       <publishTime>12/02/2019 20:42:56</publishTime>
     </File>
     <File Include="bin/BLL.dll">
-      <publishTime>12/26/2019 22:34:26</publishTime>
+      <publishTime>04/26/2020 15:12:37</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>12/26/2019 22:34:23</publishTime>
+      <publishTime>04/26/2020 15:12:36</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>12/02/2019 20:41:32</publishTime>
     </File>
     <File Include="bin/LzglMVC.dll">
-      <publishTime>12/26/2019 22:34:30</publishTime>
+      <publishTime>04/26/2020 16:03:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>12/02/2019 20:42:31</publishTime>
     </File>
     <File Include="bin/Models.dll">
-      <publishTime>12/26/2019 22:34:18</publishTime>
+      <publishTime>04/26/2020 15:12:35</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>12/02/2019 20:42:33</publishTime>
@@ -71,7 +71,7 @@
       <publishTime>12/02/2019 20:42:36</publishTime>
     </File>
     <File Include="bin/Utils.dll">
-      <publishTime>12/26/2019 22:34:21</publishTime>
+      <publishTime>04/26/2020 15:12:35</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>12/02/2019 20:42:56</publishTime>
@@ -115,6 +115,384 @@
     <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
       <publishTime>12/02/2019 20:42:59</publishTime>
     </File>
+    <File Include="Content/bootstrap-table/bootstrap-table-locale-all.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/bootstrap-table-locale-all.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/bootstrap-table.css">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/bootstrap-table.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/bootstrap-table.min.css">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/bootstrap-table.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/accent-neutralise/bootstrap-table-accent-neutralise.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/angular/bootstrap-table-angular.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/angular/bootstrap-table-angular.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/cookie/bootstrap-table-cookie.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/editable/bootstrap-table-editable.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/export/bootstrap-table-export.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/export/bootstrap-table-export.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/filter-control/bootstrap-table-filter-control.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/filter/bootstrap-table-filter.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/filter/bootstrap-table-filter.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/flat-json/bootstrap-table-flat-json.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/flat-json/bootstrap-table-flat-json.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/group-by/bootstrap-table-group-by.css">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/group-by/bootstrap-table-group-by.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/group-by/bootstrap-table-group-by.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/key-events/bootstrap-table-key-events.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/multiple-search/bootstrap-table-multiple-search.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/multiple-search/bootstrap-table-multiple-search.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/multiple-sort/bootstrap-table-multiple-sort.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/natural-sorting/bootstrap-table-natural-sorting.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/reorder-columns/bootstrap-table-reorder-columns.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.css">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/resizable/bootstrap-table-resizable.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/resizable/bootstrap-table-resizable.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/extensions/toolbar/bootstrap-table-toolbar.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-af-ZA.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-af-ZA.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ar-SA.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ar-SA.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ca-ES.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ca-ES.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-cs-CZ.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-cs-CZ.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-da-DK.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-da-DK.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-de-DE.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-de-DE.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-el-GR.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-el-GR.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-en-US.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-en-US.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-AR.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-AR.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-CR.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-CR.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-ES.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-ES.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-MX.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-MX.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-NI.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-NI.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-SP.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-es-SP.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-et-EE.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-et-EE.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fa-IR.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fa-IR.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fr-BE.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fr-BE.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fr-FR.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-fr-FR.min.js">
+      <publishTime>11/19/2015 10:49:23</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-hr-HR.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-hr-HR.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-hu-HU.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-hu-HU.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-it-IT.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-it-IT.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ja-JP.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ja-JP.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ka-GE.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ka-GE.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ko-KR.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ko-KR.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ms-MY.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ms-MY.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-nb-NO.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-nb-NO.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-nl-NL.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-nl-NL.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pl-PL.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pl-PL.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pt-BR.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pt-BR.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pt-PT.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-pt-PT.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ro-RO.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ro-RO.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ru-RU.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ru-RU.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-sk-SK.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-sk-SK.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-sv-SE.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-sv-SE.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-th-TH.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-th-TH.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-tr-TR.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-tr-TR.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-uk-UA.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-uk-UA.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ur-PK.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-ur-PK.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-vi-VN.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-vi-VN.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-zh-CN.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-zh-CN.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-zh-TW.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-table/locale/bootstrap-table-zh-TW.min.js">
+      <publishTime>11/19/2015 10:49:24</publishTime>
+    </File>
     <File Include="Content/bootstrap/bootstrap-theme.css">
       <publishTime>12/22/2019 18:19:58</publishTime>
     </File>
@@ -136,11 +514,17 @@
     <File Include="Content/bootstrap/bootstrap.min.css">
       <publishTime>12/22/2019 18:19:58</publishTime>
     </File>
+    <File Include="Content/custom/add.css">
+      <publishTime>01/22/2020 22:32:30</publishTime>
+    </File>
     <File Include="Content/custom/admin-login.css">
       <publishTime>12/16/2019 08:07:52</publishTime>
     </File>
     <File Include="Content/custom/applicant-add.css">
       <publishTime>12/24/2019 12:52:59</publishTime>
+    </File>
+    <File Include="Content/custom/employee/deptemp.css">
+      <publishTime>02/16/2020 16:49:34</publishTime>
     </File>
     <File Include="Content/custom/home-index.css">
       <publishTime>12/26/2019 22:15:48</publishTime>
@@ -149,7 +533,7 @@
       <publishTime>12/15/2019 22:06:19</publishTime>
     </File>
     <File Include="Content/custom/layout.css">
-      <publishTime>12/22/2019 18:11:46</publishTime>
+      <publishTime>01/28/2020 16:15:47</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.eot">
       <publishTime>12/25/2019 23:19:44</publishTime>
@@ -216,6 +600,9 @@
     </File>
     <File Include="Content/img/slide3.png">
       <publishTime>12/25/2019 23:34:04</publishTime>
+    </File>
+    <File Include="Content/jquery-confirm.min.css">
+      <publishTime>02/13/2020 17:06:58</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>12/02/2019 20:40:43</publishTime>
@@ -430,11 +817,20 @@
     <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
       <publishTime>12/02/2019 20:42:24</publishTime>
     </File>
+    <File Include="ErrorPage.html">
+      <publishTime>01/01/2020 12:27:39</publishTime>
+    </File>
+    <File Include="FileNotFound.html">
+      <publishTime>01/01/2020 12:28:27</publishTime>
+    </File>
     <File Include="Global.asax">
       <publishTime>12/02/2019 20:40:43</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>12/02/2019 20:43:06</publishTime>
+    </File>
+    <File Include="Scripts/add.js">
+      <publishTime>01/28/2020 16:48:54</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/25/2019 23:17:35</publishTime>
@@ -445,11 +841,23 @@
     <File Include="Scripts/bootstrap3.0.3.min.js">
       <publishTime>12/25/2019 23:17:32</publishTime>
     </File>
+    <File Include="Scripts/Department/dept.js">
+      <publishTime>02/17/2020 11:06:51</publishTime>
+    </File>
+    <File Include="Scripts/Employee/Department/dept.js">
+      <publishTime>02/02/2020 16:25:41</publishTime>
+    </File>
+    <File Include="Scripts/Employee/deptemp.js">
+      <publishTime>02/01/2020 00:04:59</publishTime>
+    </File>
     <File Include="Scripts/jquery-1.7.1.js">
       <publishTime>12/02/2019 20:42:10</publishTime>
     </File>
     <File Include="Scripts/jquery-1.7.1.min.js">
       <publishTime>12/02/2019 20:42:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-confirm.js">
+      <publishTime>02/13/2020 17:04:44</publishTime>
     </File>
     <File Include="Scripts/jquery-migrate-1.2.1.min.js">
       <publishTime>12/24/2019 13:02:21</publishTime>
@@ -496,20 +904,53 @@
     <File Include="Scripts/knockout-2.1.0.js">
       <publishTime>12/02/2019 20:42:57</publishTime>
     </File>
+    <File Include="Scripts/layout.js">
+      <publishTime>02/07/2020 20:09:22</publishTime>
+    </File>
     <File Include="Scripts/modernizr-2.5.3.js">
       <publishTime>12/02/2019 20:42:30</publishTime>
     </File>
     <File Include="Scripts/npm.js">
       <publishTime>12/25/2019 23:17:34</publishTime>
     </File>
+    <File Include="Scripts/Right/right_index.js">
+      <publishTime>02/02/2020 16:47:49</publishTime>
+    </File>
+    <File Include="Scripts/Right/right_tree_menu.js">
+      <publishTime>02/09/2020 23:07:46</publishTime>
+    </File>
+    <File Include="Scripts/Role/role_AllotGroupsIndex.js">
+      <publishTime>02/15/2020 17:15:18</publishTime>
+    </File>
+    <File Include="Scripts/vue.js">
+      <publishTime>12/29/2019 17:31:57</publishTime>
+    </File>
+    <File Include="Scripts/Wage/get_wage_byid.js">
+      <publishTime>02/18/2020 23:15:17</publishTime>
+    </File>
     <File Include="Scripts/_references.js">
       <publishTime>12/02/2019 20:42:21</publishTime>
     </File>
+    <File Include="Views/Actions/Browse.cshtml">
+      <publishTime>02/15/2020 16:02:35</publishTime>
+    </File>
+    <File Include="Views/Actions/Detail.cshtml">
+      <publishTime>02/15/2020 15:53:45</publishTime>
+    </File>
+    <File Include="Views/Actions/Edit.cshtml">
+      <publishTime>04/26/2020 15:49:57</publishTime>
+    </File>
+    <File Include="Views/Actions/Index.cshtml">
+      <publishTime>02/15/2020 16:24:56</publishTime>
+    </File>
     <File Include="Views/Applicant/ApplicantAdd.cshtml">
-      <publishTime>12/22/2019 20:02:37</publishTime>
+      <publishTime>01/23/2020 00:09:37</publishTime>
+    </File>
+    <File Include="Views/Applicant/ApplicantAdd1.cshtml">
+      <publishTime>01/13/2020 23:50:09</publishTime>
     </File>
     <File Include="Views/Applicant/Browse.cshtml">
-      <publishTime>12/22/2019 20:03:50</publishTime>
+      <publishTime>02/03/2020 23:26:20</publishTime>
     </File>
     <File Include="Views/Applicant/Detail.cshtml">
       <publishTime>12/25/2019 23:38:58</publishTime>
@@ -517,32 +958,77 @@
     <File Include="Views/Applicant/Edit.cshtml">
       <publishTime>12/22/2019 20:11:32</publishTime>
     </File>
+    <File Include="Views/Employee/DeptEmp.cshtml">
+      <publishTime>02/16/2020 16:46:26</publishTime>
+    </File>
+    <File Include="Views/Employee/副本 DeptEmp.cshtml">
+      <publishTime>01/05/2020 17:11:02</publishTime>
+    </File>
+    <File Include="Views/Groups/Browse.cshtml">
+      <publishTime>02/15/2020 15:59:14</publishTime>
+    </File>
+    <File Include="Views/Groups/Detail.cshtml">
+      <publishTime>02/15/2020 15:10:43</publishTime>
+    </File>
+    <File Include="Views/Groups/Edit.cshtml">
+      <publishTime>04/26/2020 16:10:07</publishTime>
+    </File>
+    <File Include="Views/Groups/Index.cshtml">
+      <publishTime>02/16/2020 10:50:00</publishTime>
+    </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/26/2019 22:24:24</publishTime>
     </File>
     <File Include="Views/Home/news.cshtml">
       <publishTime>12/15/2019 22:20:19</publishTime>
     </File>
+    <File Include="Views/Right/Index.cshtml">
+      <publishTime>02/09/2020 23:31:06</publishTime>
+    </File>
+    <File Include="Views/Role/AllotGroupsIndex.cshtml">
+      <publishTime>02/16/2020 11:12:28</publishTime>
+    </File>
+    <File Include="Views/Role/Browse.cshtml">
+      <publishTime>02/03/2020 23:44:24</publishTime>
+    </File>
+    <File Include="Views/Role/Detail.cshtml">
+      <publishTime>02/03/2020 23:33:16</publishTime>
+    </File>
+    <File Include="Views/Role/Edit.cshtml">
+      <publishTime>02/03/2020 23:32:17</publishTime>
+    </File>
+    <File Include="Views/Role/Index.cshtml">
+      <publishTime>02/02/2020 22:14:12</publishTime>
+    </File>
+    <File Include="Views/Shared/ApplicantBrowse.cshtml">
+      <publishTime>01/13/2020 22:43:51</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>12/02/2019 20:40:43</publishTime>
+      <publishTime>01/01/2020 15:08:18</publishTime>
     </File>
     <File Include="Views/Shared/HRMLayout.cshtml">
-      <publishTime>12/25/2019 23:35:41</publishTime>
+      <publishTime>02/16/2020 11:19:36</publishTime>
+    </File>
+    <File Include="Views/Shared/PartialRight.cshtml">
+      <publishTime>02/15/2020 16:07:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/26/2019 22:46:10</publishTime>
+      <publishTime>12/31/2019 15:30:58</publishTime>
     </File>
     <File Include="Views/Shared/副本 HRMLayout.cshtml">
       <publishTime>12/25/2019 23:01:56</publishTime>
     </File>
     <File Include="Views/SysAdmin/AdminLogin.cshtml">
-      <publishTime>12/22/2019 19:14:59</publishTime>
+      <publishTime>02/07/2020 15:29:22</publishTime>
     </File>
     <File Include="Views/SysAdmin/HRManage.cshtml">
-      <publishTime>12/22/2019 19:56:32</publishTime>
+      <publishTime>02/07/2020 15:58:04</publishTime>
     </File>
     <File Include="Views/SysAdmin/Signup.cshtml">
       <publishTime>12/22/2019 18:56:22</publishTime>
+    </File>
+    <File Include="Views/Wage/Index.cshtml">
+      <publishTime>02/02/2020 11:48:40</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>12/02/2019 20:40:43</publishTime>
@@ -551,7 +1037,7 @@
       <publishTime>12/02/2019 20:40:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/26/2019 22:46:31</publishTime>
+      <publishTime>04/26/2020 16:17:40</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HandleErrorInfo
+@{
     Layout = null;
 }
 
@@ -11,7 +12,18 @@
 </head>
 <body>
     <h2>
-        抱歉，处理您的请求时出错。
+        抱歉，处理您的请求时出错,请于管理员联系。
     </h2>
+    <h3>错误来源：</h3>
+    <div>
+        <ul>
+            <li>控制器名称：@Model.ControllerName</li>
+            <li>动作名称：@Model.ActionName</li>
+        </ul>
+    </div>
+    <h3>异常信息：</h3>
+    <div style="overflow:auto">
+        @Model.Exception.Message
+    </div>
 </body>
 </html>

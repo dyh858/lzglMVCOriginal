@@ -39,5 +39,9 @@ namespace BLL
         {
             return new SysAdminService().findById(id);
         }
+        public SysAdmin ShowByName(string name)
+        {
+            return new SysAdminService().FindByName(name);
+        }
     }
 }

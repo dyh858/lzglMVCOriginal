@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Models;
+using Models.RBAC;
 using BLL;
+using BLL.RBAC;
 using System.Web.Security;
 
 namespace StudentManagerMVC.Controllers
@@ -38,7 +40,7 @@ namespace StudentManagerMVC.Controllers
                     FormsAuthentication.SetAuthCookie(objAdmin.AdminName, false);
                     ViewBag.info = "欢迎您：" + objAdmin.AdminName;
                     ViewData["info"] = "欢迎您：" + objAdmin.AdminName;
-                    return View("HRManage", objAdmin);
+                    return RedirectToAction("HRManage",objAdmin);
                 }
                 else
                 {
@@ -52,14 +54,20 @@ namespace StudentManagerMVC.Controllers
         [Authorize]
         public ActionResult HRManage(SysAdmin vo)
         {
+            if (vo.AdminName == null) { 
+                vo.AdminName = User.Identity.Name;
+                vo = new SysAdminManager().ShowByName(vo.AdminName);
+            }
+            List<Groups> GroupsList = new GroupsManager().list(vo.rid);
+            ViewBag.Groups = GroupsList;
             return View(vo);
         }
         //退出登录
         public ActionResult Destroy()
         {
+            FormsAuthentication.SignOut();//注销Cookie
             if ((SysAdmin)Session["CurrentAdmin"] != null)
-            {
-                FormsAuthentication.SignOut();//注销Cookie
+            { 
                 Session.Remove("CurrentAdmin");//注销Session
             }
             return RedirectToAction("Index", "Home");
@@ -72,7 +80,11 @@ namespace StudentManagerMVC.Controllers
         {
             return View();
         }
-        
+        /// <summary>
+        /// 注册结果
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         public ActionResult RegisterResult(SysAdmin vo)
         {
             if (ModelState.IsValid)
@@ -88,5 +100,6 @@ namespace StudentManagerMVC.Controllers
             }
             return View("Register", vo);
         }
+
     }
 }

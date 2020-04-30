@@ -19,7 +19,7 @@ namespace DAL
         public SysAdmin AdminLogin(SysAdmin objAdmin)
         {
             Encrypt enc = new Encrypt(objAdmin.LoginPwd);
-            string sql = "select AdminName from admins where LoginId={0} and LoginPwd='{1}'";
+            string sql = "select AdminName,empid,rid from admins where LoginId={0} and LoginPwd='{1}'";
             sql = string.Format(sql,objAdmin.LoginId,enc.str2);
             try
             {
@@ -27,6 +27,8 @@ namespace DAL
                 if (objReader.Read())
                 {
                     objAdmin.AdminName = objReader["AdminName"].ToString();
+                    objAdmin.empid = objReader["empid"].ToString();
+                    objAdmin.rid = Convert.ToInt32(objReader["rid"]);
                     objReader.Close();
                 }
                 else
@@ -73,7 +75,7 @@ namespace DAL
         /// <returns></returns>
         public SysAdmin findById(string id)
         {
-            string sql = "SELECT LoginId,AdminName FROM admins WHERE LoginId='{0}'";
+            string sql = "SELECT LoginId,AdminName,empid,rid FROM admins WHERE LoginId='{0}'";
             sql = string.Format(sql, id);
             try
             {
@@ -84,7 +86,9 @@ namespace DAL
                     vo = new SysAdmin()
                     {
                         LoginId= reader["LoginId"].ToString(),
-                        AdminName=reader["AdminName"].ToString()
+                        AdminName=reader["AdminName"].ToString(),
+                        empid = reader["empid"].ToString(),
+                        rid = Convert.ToInt32(reader["rid"])
                     };
                 }
                 return vo;
@@ -96,5 +100,37 @@ namespace DAL
             }
 
         }
+        /// <summary>
+        /// 根据用户名获得对象，主要从Cookie获得用户名
+        /// </summary>
+        /// <param name="AdminName">用户名</param>
+        /// <returns>返回一个登录对象，包涵角色id</returns>
+        public SysAdmin FindByName(string AdminName)
+        {
+            string sql = "SELECT LoginId,AdminName,rid,empid FROM admins WHERE adminName='{0}'";
+            sql = string.Format(sql, AdminName);
+            try
+            {
+                SqlDataReader reader = SQLHelper.GetReader(sql);
+                SysAdmin vo = null;
+                if (reader.Read())
+                {
+                    vo = new SysAdmin()
+                    {
+                        LoginId = reader["LoginId"].ToString(),
+                        AdminName = reader["AdminName"].ToString(),
+                        empid = reader["empid"].ToString(),
+                        rid=Convert.ToInt32(reader["rid"])
+                    };
+                }
+                return vo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }

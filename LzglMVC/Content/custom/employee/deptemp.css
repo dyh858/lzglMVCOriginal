@@ -1,4 +1,9 @@
-﻿#emp
+﻿ul
+{
+    margin:10px 0 0 20px;
+    padding:0;
+}
+#emp
 {
     margin-top:60px;
     overflow:scroll; 
@@ -10,4 +15,6 @@
 #dept
 {
     margin-top:60px;
+    overflow:scroll; 
+    height:600px;
 }

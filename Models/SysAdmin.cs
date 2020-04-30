@@ -21,5 +21,7 @@ namespace Models
         [DisplayName("密码")]
         [Required(ErrorMessage = "{0}不得为空")]
         public string LoginPwd { get; set; }
+        public int rid { get; set; }
+        public string empid {get;set;}
     }
 }

@@ -1,6 +1,7 @@
 ﻿@using Models;    
 @{
     SysAdmin admin= (SysAdmin)Session["CurrentAdmin"];
+    string AdminName = User.Identity.Name;
 }
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/layout.js"></script>
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -34,8 +36,18 @@
                     <li><a href="#">国内</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="@(admin != null ? "~/SysAdmin/Destroy" : "~/SysAdmin/Index")">@(admin != null ? "已登录" : "登录")</a></li>
-                    <li><a href="@Url.Action("Signup","SysAdmin",new{})">注册</a></li>
+                    @{
+                        if(AdminName!=""){
+                            <li><a href="@Url.Action("HRManage","SysAdmin",new{})">人员管理</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> @AdminName</a></li>
+                            <li><a href="@Url.Action("Destroy","SysAdmin",new{})">退出登录</a></li>
+                            
+                        }
+                        else{
+                            <li><a href="@Url.Action("Index","SysAdmin",new{})" target="blank">登录</a></li>
+                            <li><a href="@Url.Action("Signup","SysAdmin",new{})" target="_blank">注册</a></li>
+                        }    
+                    }
                 </ul>
             </div>
         </div>
@@ -43,7 +55,7 @@
 
     @RenderBody()
             
-    <div class="footer">
+    <div class="footer" id="footer">
         联系我们｜www.858.com All Right Reserve 版权所有
     </div>
 

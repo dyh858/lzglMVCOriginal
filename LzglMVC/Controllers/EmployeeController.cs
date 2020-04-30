@@ -17,7 +17,7 @@ namespace StudentManagerMVC.Controllers
 
         public ActionResult Index()
         {
-            return View("EmployeeManage");
+            return View("DeptEmp");
         }
         /// <summary>
         /// 根据部门查询人员

@@ -4,63 +4,91 @@
     ViewBag.Title = "应聘人员登记";
     Layout = "~/Views/Shared/HRMLayout.cshtml";
 }
-<div>
-    <div>
-        <div id="add" class="container">
-            <form action="/Applicant/Add" method="post">
-                <div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">姓名：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="aname" class="form-control" value="@(Model != null ? Model.AName : "")"/><p class="err">@Html.ValidationMessage("AName")</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">性别：</div>
-                        <div class="col-sm-12 col-md-6 right">
-                            <label class="radio-inline">
-                                <input type="radio" name="gender" value="1" checked="checked" />男</label>
-                            <label class="radio-inline">
-                                <input type="radio" name="gender" value="0" />女</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">民族：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="nationality" class="form-control" value="@(Model != null ? Model.Nationality : "")"/>@Html.ValidationMessage("Nationality")</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">出生日期：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="birthdate" class="form-control" value="@(Model != null ? Convert.ToString(Model.Birthdate) : "")"/>@Html.ValidationMessage("Birthdate")</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">身份证号码：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="idcard" class="form-control" value="@(Model != null ? Model.IdCard : "")"/>@Html.ValidationMessage("IdCard")</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">住址：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="address" class="form-control" value="@(Model != null ? Model.Address : "")"/>@Html.ValidationMessage("Address")</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">电话号码：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="mobilephone" class="form-control" value="@(Model != null ? Model.Mobilephone : "")"/>@Html.ValidationMessage("Mobilephone")</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 left">学历：</div>
-                        <div class="col-sm-12 col-md-6">
-                            <input type="text" name="education" class="form-control" value="@(Model != null ? Model.Education : "")"/>@Html.ValidationMessage("Education")</div>
-                    </div>
-                    <div class="row">
-                        <div>
-                            <input type="submit" value="提交" class="btn btn-primary" /></div>
+<link href="~/Content/custom/add.css" rel="stylesheet" />
+<script src="~/Scripts/add.js"></script>
+
+<div id="add">
+    <div class="container">
+        <form action="/Applicant/Add" method="post" class="form-container">
+            <h3>增加应聘人员</h3>
+            <div class="form-row clearfix clearfix">
+                <div class="col-sm-3">
+                    <label class="left">姓名：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="aname" class="form-control" value="@(Model != null ? Model.AName : "")"/><p class="err">@Html.ValidationMessage("AName")</p>
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>性别：</label>
+                </div>
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" value="1" checked="checked" />男
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="gender" value="0" />女
+                        </label>
                     </div>
                 </div>
-            </form>
-            <div>@ViewData["result"]</div>
-        </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>民族：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="nationality" class="form-control" value="@(Model != null ? Model.Nationality : "")"/>@Html.ValidationMessage("Nationality")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>出生日期：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="birthdate" class="form-control" value="@(Model != null ? Convert.ToString(Model.Birthdate) : "")"/>@Html.ValidationMessage("Birthdate")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>身份证号码：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="idcard" class="form-control" value="@(Model != null ? Model.IdCard : "")"/>@Html.ValidationMessage("IdCard")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>住址：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="address" class="form-control" value="@(Model != null ? Model.Address : "")"/>@Html.ValidationMessage("Address")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>电话号码：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="mobilephone" class="form-control" value="@(Model != null ? Model.Mobilephone : "")"/>@Html.ValidationMessage("Mobilephone")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3">
+                    <label>学历：</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="education" class="form-control" value="@(Model != null ? Model.Education : "")"/>@Html.ValidationMessage("Education")
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <input type="submit" value="提交" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </form>
+        <div>@ViewData["result"]</div>
     </div>
 </div>

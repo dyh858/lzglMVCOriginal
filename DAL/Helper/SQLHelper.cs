@@ -83,5 +83,22 @@ namespace DAL
                 throw ex;
             }
         }
+        public static SqlDataAdapter GetAdatper(string sql)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                return adapter;
+            }
+            catch (Exception ex)
+            {
+                conn.Close();
+                throw ex;
+            }
+        }
     }
 }

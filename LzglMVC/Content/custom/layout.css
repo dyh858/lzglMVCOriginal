@@ -27,7 +27,7 @@ img,.side-bar .list-group-item
     background-repeat: no-repeat;
     background-position: center center;
 }
-.footer
+/*.footer
 {
     width:100%;
     margin-top:20px;
@@ -39,3 +39,21 @@ img,.side-bar .list-group-item
     position:absolute;
     bottom:0px;
 }
+*/
+.footer{
+  margin-top:20px;
+  padding:10px 0;
+  text-align:center;
+  color:grey;
+  background-color: #eee;
+  font-size:12px;
+  width:100%;
+}/*
+object
+{
+    width:100%;
+    height:50px;
+}
+
+div:last-of-type{ background-color:red; } 
+    */

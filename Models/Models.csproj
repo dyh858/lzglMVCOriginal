@@ -44,8 +44,13 @@
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RBAC\Actions.cs" />
+    <Compile Include="RBAC\Groups.cs" />
+    <Compile Include="RBAC\Role.cs" />
+    <Compile Include="Right.cs" />
     <Compile Include="SysAdmin.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
