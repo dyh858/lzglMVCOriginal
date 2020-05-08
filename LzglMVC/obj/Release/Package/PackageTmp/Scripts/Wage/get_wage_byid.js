@@ -1,9 +1,25 @@
 ﻿
 $(function () {
     //$('#rootpath').val()获得非根目录人中间目录，web程序移植后，目录发生改变
-    $.getJSON($('#rootpath').val()+"/Wage/GetWageById", {empid:'0412',StartDate:'201712',EndDate:'201812'}, function (response) {
-        var json = JSON.parse(response);
-        $(window).on("load resize", function () {
+    $(window).on("load", ShowTable('#tb'));
+    $(window).on("resize", function () {
+        ShowTable('#tb');
+    });
+    $(document).delegate('#YearMonthOk', 'click', function (e) {
+        e.stopPropagation();
+        ShowTable('#tb');
+    });
+    
+});
+function ShowTable(TableId) {
+    $.getJSON($('#rootpath').val() + "/Wage/GetWageById",
+        {
+            empid: $('#empid').val(),
+            StartDate: $('#StartMonth option:selected').text(),
+            EndDate: $('#EndMonth option:selected').text()
+        },
+        function (response) {
+            var json = JSON.parse(response);
             if ($(window).width() >= 992) {
                 $("tr").remove();
                 //标题栏
@@ -13,7 +29,7 @@ $(function () {
                     th += "<th>" + Object.keys(json[0])[i] + "</th>"
                 }
                 var s = tr + th + "</tr>"
-                $("#tb").append(s);
+                $(TableId).append(s);
                 //填充内容
                 for (var i = 0; i < json.length; i++) {
                     var tr = "<tr>";
@@ -22,7 +38,7 @@ $(function () {
                         td += "<td>" + Object.values(json[i])[j] + "</td>"
                     }
                     var s = tr + td + "</tr>";
-                    $('#tb').append(s);
+                    $(TableId).append(s);
                 }
             } else {
                 $("tr").remove();
@@ -33,10 +49,9 @@ $(function () {
                         content += "<p>" + Object.keys(json[i])[j] + ": " + Object.values(json[i])[j] + "</p>";
                     }
                     td += content + "</td></tr>"
-                    $('#tb').append(td);
+                    $(TableId).append(td);
                 }
             }
-        });
-        $(window).load();
-    });   
-});
+        }
+    );
+}

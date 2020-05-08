@@ -12,8 +12,8 @@ namespace DAL.RBAC
     {
         public bool insert(Actions vo)
         {
-            string sql = "insert into action(title,url,action_name,controller_name)values('{0}','{1}','{2}','{3}')";
-            sql = string.Format(sql,vo.Title,vo.Url,vo.ActionName,vo.ControllerName);
+            string sql = "insert into action(title,url)values('{0}','{1}')";
+            sql = string.Format(sql,vo.Title,vo.Url);
             try
             {
                 if (SQLHelper.Update(sql) >= 1)

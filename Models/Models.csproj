@@ -49,6 +49,7 @@
     <Compile Include="RBAC\Role.cs" />
     <Compile Include="Right.cs" />
     <Compile Include="SysAdmin.cs" />
+    <Compile Include="Wage.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

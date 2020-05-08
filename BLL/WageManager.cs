@@ -13,5 +13,9 @@ namespace BLL
         {
             return new WageService().GetTable(empid,StartDate,EndDate);
         }
+        public List<string> GetYearMonthList()
+        {
+            return new WageService().GetYearMonthList();
+        }
     }
 }

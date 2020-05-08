@@ -66,13 +66,13 @@ var ButtonInit = function () {
     var postdata = {};
 
     oInit.Init = function () {
-        //$("#btn_add").click(function () {
-        //    $("#myModalLabel").text("新增");
-        //    $("#myModal").find(".form-control").val("");
-        //    $('#myModal').modal()
+        $("#btn_add").click(function () {
+            $("#myModalLabel").text("新增");
+            $("#myModal").find(".form-control").val("");
+            $('#myModal').modal()
 
-        //    postdata.DEPARTMENT_ID = "";
-        //});
+            postdata.DEPARTMENT_ID = "";
+        });
 
         //$("#btn_edit").click(function () {
         //    var arrselections = $("#tb_departments").bootstrapTable('getSelections');

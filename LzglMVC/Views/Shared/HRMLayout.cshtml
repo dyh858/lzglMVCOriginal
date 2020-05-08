@@ -3,9 +3,10 @@
 @using BLL.RBAC;
 @using BLL;
 @{
-    SysAdmin admin = (SysAdmin)Session["CurrentAdmin"];
+    //SysAdmin admin = (SysAdmin)Session["CurrentAdmin"];
     string AdminName = User.Identity.Name;
-    int rid= new SysAdminManager().ShowByName(AdminName).rid;
+    SysAdmin admin = new SysAdminManager().ShowByName(AdminName); //获得当前登录对象
+    int rid= admin.rid;  //角色ID
     List<Groups> GroupsList = new GroupsManager().list(rid);
     //获得非直接根目录的中间目录。因为：Url.Ation的参数不能使用变量，无法动态生成权限菜单的Url
     string RootPath = Url.Action("Index", "SysAdmin");
@@ -74,6 +75,7 @@
         </div>
     </nav>
     <input type="hidden" name="rootpath" id="rootpath" value="@RootPath" />
+    <input type="hidden" name="empid" id="empid" value="@admin.empid" />
     <input type="hidden" name="rid" id="rid" value="@rid" />
     @RenderBody()
     <div class="footer">联系我们 | www.858.com | 版权所有</div>
