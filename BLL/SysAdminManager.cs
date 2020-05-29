@@ -43,5 +43,13 @@ namespace BLL
         {
             return new SysAdminService().FindByName(name);
         }
+        public SysAdmin ShowByEmpid(string Empid)
+        {
+            return new SysAdminService().FindByEmpid(Empid);
+        }
+        public SysAdmin ShowByLoginId(string loginid)
+        { 
+            return new SysAdminService().FindByLoginId(loginid);
+        }
     }
 }

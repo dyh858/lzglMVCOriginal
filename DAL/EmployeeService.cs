@@ -14,7 +14,7 @@ namespace DAL
         public List<Employee> GetEmpByDept(string deptName)
         {
             string sql = "SELECT 职工号,姓名,性别,出生日期,身份证号码,"+
-                "手机长号,住址 FROM 员工 WHERE ltrim(rtrim(部门名称))= '{0}' " +
+                "手机长号,住址,银行账号 FROM 员工 WHERE ltrim(rtrim(部门名称))= '{0}' " +
                 "OR ltrim(rtrim(班组))= '{0}'";
             
             sql=string.Format(sql,deptName.Trim());
@@ -30,8 +30,8 @@ namespace DAL
                     Idcard=objReader["身份证号码"].ToString(),
                     Gender = objReader["性别"].ToString(),
                     MobilePhone=objReader["手机长号"].ToString(),
-                    Address = objReader["住址"].ToString()
-
+                    Address = objReader["住址"].ToString(),
+                    BankCard = objReader["银行账号"].ToString()
                 });
             }
             objReader.Close();
@@ -45,7 +45,7 @@ namespace DAL
         public Employee getEmpById(string empid)
         {
             string sql = "SELECT 职工号,姓名,性别,出生日期,身份证号码,"+
-                "手机长号,住址 FROM 员工 WHERE 职工号='{0}'";
+                "手机长号,住址,银行账号 FROM 员工 WHERE 职工号='{0}'";
             sql = string.Format(sql, empid);
             SqlDataReader objReader = SQLHelper.GetReader(sql);
             Employee vo = null;
@@ -61,7 +61,39 @@ namespace DAL
                     Idcard = objReader["身份证号码"].ToString(),
                     MobilePhone = objReader["手机长号"].ToString(),
                     Address = objReader["住址"].ToString(),
+                    BankCard = objReader["银行账号"].ToString()
                  };
+            }
+
+            objReader.Close();
+            return vo;
+        }
+        /// <summary>
+        /// 根据身份证号码查询职工
+        /// </summary>
+        /// <param name="IdCard"></param>
+        /// <returns></returns>
+        public Employee getEmpByIdCard(string IdCard)
+        {
+            string sql = "SELECT 职工号,姓名,性别,出生日期,身份证号码," +
+                "手机长号,住址,银行账号 FROM 员工 WHERE 身份证号码='{0}'";
+            sql = string.Format(sql, IdCard);
+            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            Employee vo = null;
+
+            if (objReader.Read())
+            {
+                vo = new Employee()  //类的实例初始化器
+                {
+                    Empid = objReader["职工号"].ToString(),
+                    Name = objReader["姓名"].ToString(),
+                    Gender = objReader["性别"].ToString(),
+                    Birthdate = Convert.ToDateTime(objReader["出生日期"]).ToString("yyyy-MM-dd"),
+                    Idcard = objReader["身份证号码"].ToString(),
+                    MobilePhone = objReader["手机长号"].ToString(),
+                    Address = objReader["住址"].ToString(),
+                    BankCard = objReader["银行账号"].ToString()
+                };
             }
 
             objReader.Close();

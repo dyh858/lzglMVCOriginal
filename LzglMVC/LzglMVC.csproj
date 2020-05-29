@@ -411,6 +411,7 @@
     <Content Include="Scripts\Right\right_index.js" />
     <Content Include="Scripts\Right\right_tree_menu.js" />
     <Content Include="Scripts\Role\role_AllotGroupsIndex.js" />
+    <Content Include="Scripts\SysAdmin\signup.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\Wage\get_wage_byid.js" />
     <Content Include="Scripts\_references.js" />

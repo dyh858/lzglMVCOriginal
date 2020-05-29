@@ -21,5 +21,9 @@ namespace BLL
         {
             return new EmployeeService().ModifyEmployee(vo);
         }
+        public Employee ShowByIdCard(string IdCard)
+        {
+            return new EmployeeService().getEmpByIdCard(IdCard);
+        }
     }
 }

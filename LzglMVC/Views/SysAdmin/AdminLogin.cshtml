@@ -6,6 +6,7 @@
 }
 <link href="~/Content/custom/admin-login.css" rel="stylesheet" />
 <div class="container container-small render">
+    <p>@ViewData["result"]</p>
     <h1>登录
         <small>没有账号？<a href="@Url.Action("Signup","SysAdmin",new{})">注册</a></small>
     </h1>

@@ -8,6 +8,7 @@ using Models.RBAC;
 using BLL;
 using BLL.RBAC;
 using System.Web.Security;
+using Newtonsoft.Json;
 
 namespace StudentManagerMVC.Controllers
 {
@@ -91,15 +92,57 @@ namespace StudentManagerMVC.Controllers
             {
                 if (new SysAdminManager().add(vo))
                 {
-                    ViewData["result"] = "注册成功！请在登录页面登录。";
+                    ViewData["result"]= "注册成功！请登录:";
+                    return View("AdminLogin");
                 }
                 else
                 {
-                    ViewData["result"] = "注册失败！";
+                    ViewData["result"]= "注册失败！";
                 }
             }
-            return View("Register", vo);
+            return View("Signup");
         }
-
+        /// <summary>
+        /// 根据类容进行搜索，没找到返回“查询失败！”，
+        /// 在雇员中找到，用empid在用户中查找，如果找到，返回“您已注册！”
+        /// 如未找到，返回雇员类的json数据
+        /// </summary>
+        /// <param name="TxtSearch"></param>
+        /// <returns></returns>
+        public ActionResult Search(string TxtSearch) 
+        {
+            Employee emp = new EmployeeManager().ShowByIdCard(TxtSearch);
+            if(emp != null){
+                ViewBag.emp = emp;
+                SysAdmin admin = new SysAdminManager().ShowByEmpid(emp.Empid);
+                if (admin == null)
+                {
+                    String JsonEmp = JsonConvert.SerializeObject(emp);
+                    return this.Content(JsonEmp);
+                }
+                else
+                {
+                    return  this.Content("您已注册！");
+                }
+                
+            }
+            return this.Content("查询失败！");
+        }
+        /// <summary>
+        /// 验证用户ID是否已经存在
+        /// </summary>
+        /// <param name="empid"></param>
+        /// <returns></returns>
+        public ActionResult IsLoginId(string LoginId) {
+            SysAdmin admin = new SysAdminManager().ShowByLoginId(LoginId);
+            if (admin != null)
+            {
+                return this.Content("false");
+            }
+            else
+            {
+                return this.Content("true");
+            }
+        }
     }
 }

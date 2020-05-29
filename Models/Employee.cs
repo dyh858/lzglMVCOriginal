@@ -15,6 +15,7 @@ namespace Models
         public string Idcard { get; set; }
         public string MobilePhone { get; set; }
         public string Address { get; set; }
+        public string BankCard { get; set; }
 
         public int getSex()
         {

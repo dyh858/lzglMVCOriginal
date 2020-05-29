@@ -19,7 +19,7 @@ namespace DAL
         public SysAdmin AdminLogin(SysAdmin objAdmin)
         {
             Encrypt enc = new Encrypt(objAdmin.LoginPwd);
-            string sql = "select AdminName,empid,rid from admins where LoginId={0} and LoginPwd='{1}'";
+            string sql = "select AdminName,empid,rid from admins where LoginId='{0}' and LoginPwd='{1}'";
             sql = string.Format(sql,objAdmin.LoginId,enc.str2);
             try
             {
@@ -50,8 +50,8 @@ namespace DAL
         public bool insert(SysAdmin vo)
         {
             Encrypt enc = new Encrypt(vo.LoginPwd);
-            string sql = "INSERT INTO admins(LoginId,AdminName,LoginPwd)VALUES('{0}','{1}', '{2}')";
-            sql = string.Format(sql,vo.LoginId,vo.AdminName,enc.str2);
+            string sql = "INSERT INTO admins(LoginId,AdminName,LoginPwd,empid,rid)VALUES('{0}','{1}', '{2}','{3}',{4})";
+            sql = string.Format(sql,vo.LoginId,vo.AdminName,enc.str2,vo.empid,vo.rid);
             try
             {
                 if (SQLHelper.Update(sql) >= 1)
@@ -121,6 +121,64 @@ namespace DAL
                         AdminName = reader["AdminName"].ToString(),
                         empid = reader["empid"].ToString(),
                         rid=Convert.ToInt32(reader["rid"])
+                    };
+                }
+                return vo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// 根据职工号查询
+        /// </summary>
+        /// <param name="Empid"></param>
+        /// <returns></returns>
+        public SysAdmin FindByEmpid(string Empid)
+        {
+            string sql = "SELECT LoginId,AdminName,rid,empid FROM admins WHERE empid='{0}'";
+            sql = string.Format(sql, Empid);
+            try
+            {
+                SqlDataReader reader = SQLHelper.GetReader(sql);
+                SysAdmin vo = null;
+                if (reader.Read())
+                {
+                    vo = new SysAdmin()
+                    {
+                        LoginId = reader["LoginId"].ToString(),
+                        AdminName = reader["AdminName"].ToString(),
+                        empid = reader["empid"].ToString(),
+                        rid = Convert.ToInt32(reader["rid"])
+                    };
+                }
+                return vo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public SysAdmin FindByLoginId(string LoginId)
+        {
+            string sql = "SELECT LoginId,AdminName,rid,empid FROM admins WHERE loginid='{0}'";
+            sql = string.Format(sql, LoginId);
+            try
+            {
+                SqlDataReader reader = SQLHelper.GetReader(sql);
+                SysAdmin vo = null;
+                if (reader.Read())
+                {
+                    vo = new SysAdmin()
+                    {
+                        LoginId = reader["LoginId"].ToString(),
+                        AdminName = reader["AdminName"].ToString(),
+                        empid = reader["empid"].ToString(),
+                        rid = Convert.ToInt32(reader["rid"])
                     };
                 }
                 return vo;
