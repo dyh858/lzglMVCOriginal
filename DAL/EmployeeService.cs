@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Models;
 using DAL;
+using Utils;
 
 namespace DAL
 {
@@ -75,8 +76,8 @@ namespace DAL
         /// <returns></returns>
         public Employee getEmpByIdCard(string IdCard)
         {
-            string sql = "SELECT 职工号,姓名,性别,出生日期,身份证号码," +
-                "手机长号,住址,银行账号 FROM 员工 WHERE 身份证号码='{0}'";
+            string sql = "SELECT empid,name,Sex,birthdate,idcard,mobilephone," +
+                "住址,银行账号,invitationcode from employees WHERE idcard='{0}'";
             sql = string.Format(sql, IdCard);
             SqlDataReader objReader = SQLHelper.GetReader(sql);
             Employee vo = null;
@@ -85,15 +86,16 @@ namespace DAL
             {
                 vo = new Employee()  //类的实例初始化器
                 {
-                    Empid = objReader["职工号"].ToString(),
-                    Name = objReader["姓名"].ToString(),
-                    Gender = objReader["性别"].ToString(),
-                    Birthdate = Convert.ToDateTime(objReader["出生日期"]).ToString("yyyy-MM-dd"),
-                    Idcard = objReader["身份证号码"].ToString(),
-                    MobilePhone = objReader["手机长号"].ToString(),
+                    Empid = objReader["empid"].ToString(),
+                    Name = objReader["name"].ToString(),
+                    Birthdate = Convert.ToDateTime(objReader["birthdate"]).ToString("yyyy-MM-dd"),
+                    Idcard = objReader["idcard"].ToString(),
+                    MobilePhone = objReader["mobilephone"].ToString(),
                     Address = objReader["住址"].ToString(),
-                    BankCard = objReader["银行账号"].ToString()
+                    BankCard = objReader["银行账号"].ToString(),
+                    InvitationCode = objReader["invitationcode"].ToString(),
                 };
+                vo.setSex(Convert.ToInt32(objReader["Sex"]));
             }
 
             objReader.Close();
@@ -124,5 +126,29 @@ namespace DAL
                 throw e;
             }
         }
+
+        public string InvitationCode(string empid) 
+        {
+            string RandomCode = new RandomStringBuilder().Create(4);
+
+            string sql = "UPDATE employees set invitationcode='{0}' WHERE empid='{1}'";
+            sql = string.Format(sql, RandomCode, empid);
+            try
+            {
+                if (SQLHelper.Update(sql) >= 1)
+                {
+                    return RandomCode;
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("应用程序和数据库连接出现问题！" + ex.Message);
+            }
+        }
+
     }
 }

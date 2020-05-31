@@ -3,3 +3,8 @@ E:\C#\LzglMVC\Models\bin\Release\Models.pdb
 E:\C#\LzglMVC\Models\obj\Release\Models.dll
 E:\C#\LzglMVC\Models\obj\Release\Models.pdb
 E:\C#\LzglMVC\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+D:\C#\lzglMVCOriginal\Models\bin\Release\Models.dll
+D:\C#\lzglMVCOriginal\Models\bin\Release\Models.pdb
+D:\C#\lzglMVCOriginal\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+D:\C#\lzglMVCOriginal\Models\obj\Release\Models.dll
+D:\C#\lzglMVCOriginal\Models\obj\Release\Models.pdb

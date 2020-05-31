@@ -144,5 +144,16 @@ namespace StudentManagerMVC.Controllers
                 return this.Content("true");
             }
         }
+
+        public ActionResult ShowInvitationCode(string Empid)
+        {
+            string inviteCode = new EmployeeManager().InvitationCode(Empid);
+            return this.Content(inviteCode);
+        }
+
+        public ActionResult InvitationCodeView()
+        {
+            return View();
+        }
     }
 }

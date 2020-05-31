@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿/*
+$(function () {
     $(window).on("load resize", function () {
         $footer = $("#footer");
         footerHeight = $footer.height();
@@ -21,8 +22,9 @@
         data:{
             rootPath: getRootPath()
         }
-    });
-});
+    })
+});*/
+//获得根路径，在服务器部署时避免因有中间路径而出现错误
 function getRootPath() {
     var strFullPath = window.document.location.href;
     var strPath = window.document.location.pathname;

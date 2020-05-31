@@ -3,3 +3,8 @@ E:\C#\LzglMVC\Utils\bin\Release\Utils.pdb
 E:\C#\LzglMVC\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
 E:\C#\LzglMVC\Utils\obj\Release\Utils.dll
 E:\C#\LzglMVC\Utils\obj\Release\Utils.pdb
+D:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.dll
+D:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.pdb
+D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
+D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.dll
+D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.pdb

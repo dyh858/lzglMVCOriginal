@@ -16,16 +16,28 @@ namespace Models
         public string MobilePhone { get; set; }
         public string Address { get; set; }
         public string BankCard { get; set; }
+        public string InvitationCode { get; set; }
 
         public int getSex()
         {
-            if (Name == "男")
+            if (Gender == "男")
             {
                 return 1;
             }
             else
             {
                 return 0;
+            }
+        }
+        public void setSex(int val)
+        {
+            if (val == 1)
+            {
+                Gender = "男";
+            }
+            else
+            {
+                Gender = "女";
             }
         }
     }

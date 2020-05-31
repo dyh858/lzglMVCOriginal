@@ -10,52 +10,69 @@
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/SysAdmin/signup.js"></script>
 <div class="container container-small render">
-    <h1>注册
+    <h1>
+        注册
         <small>已有账号？<a href="@Url.Action("Index","SysAdmin",new{})">登录</a></small>
     </h1>
     @using (Ajax.BeginForm("Search", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmp" }))
     {
         <div class="form-group">
             <div class="input-group">
-                <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/姓名"/>
+                <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/姓名" />
                 <div class="input-group-btn">
-                    <input type="submit" class="btn btn-default" value="查 询"/>
+                    <input type="submit" class="btn btn-default" value="查 询" />
                 </div>
             </div>
         </div>
-        
+
     }
     <ol class="reg_error"></ol>
     <div class="form-group" id="Info"></div>
-    <div class="form-group"  id="Verify" style="display:none;">
-        <p><span id="Name"></span>，您好，欢迎注册，填入您的工资卡账号，以确保是你本人在操作！</p>
-        <input type="text" class="form-control" name="BankCard" id="BankCard"/>
-        <form action="~/SysAdmin/RegisterResult" method="post" id="FrmRegist" style="display:none;">
-            <hr />
-            <p>验证成功，请填写以下空格完成注册：</p>
-            <div class="form-group">
-                <label>用户ID：</label>
-                <input type="text" class="form-control" name="LoginId"/>
-            </div>
-            <div class="form-group">
-                <label>密码：</label>
-                <input type="text" class="form-control" name="LoginPwd" id="LoginPwd"/>
-            </div>
-            <div class="form-group">
-                <label>确认密码：</label>
-                <input type="text" class="form-control" name="ConfirmPwd"/>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block" value="注册"/>
-            </div>
-            <div class="form-group">
-                注册即代表你同意<a href="#">服务条款</a>
-            </div>
-            <input type="hidden" name="Empid" id="Empid"/>
-            <input type="hidden" name="AdminName" id="AdminName"/>
-            <input type="hidden" name="rid" id="rid"/>
-        </form>
-    </div>
 
+    <div id="Verify" style="display:none;">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#BankCardReg" data-toggle="tab">工资卡验证注册</a></li>
+            <li><a href="#InvitationCodeReg" data-toggle="tab">邀请码注册</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="BankCardReg">
+                <div class="form-group">
+                    <p><span class="Name"></span>，您好，欢迎注册，填入您的<strong>工资卡账号</strong>，以确保是你本人在操作！</p>
+                    <input type="text" class="form-control" name="BankCard" id="BankCard" />
+                </div>
+            </div>
+            <div class="tab-pane fade" id="InvitationCodeReg">
+                <div class="form-group">
+                    <p><span class="Name"></span>，您好，欢迎注册，填入您得到的<strong>邀请码</strong>，以确保是你本人在操作！</p>
+                    <input type="text" class="form-control" name="InvitationCode" id="InvitationCode" />
+                </div>
+            </div>         
+        </div>
+    </div>
     
+    <form action="~/SysAdmin/RegisterResult" method="post" id="FrmRegist" style="display:none;">
+        <hr />
+        <p>验证成功，请填写以下空格完成注册：</p>
+        <div class="form-group">
+            <label>用户ID：</label>
+            <input type="text" class="form-control" name="LoginId" />
+        </div>
+        <div class="form-group">
+            <label>密码：</label>
+            <input type="text" class="form-control" name="LoginPwd" id="LoginPwd" />
+        </div>
+        <div class="form-group">
+            <label>确认密码：</label>
+            <input type="text" class="form-control" name="ConfirmPwd" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="注册" />
+        </div>
+        <div class="form-group">
+            注册即代表你同意<a href="#">服务条款</a>
+        </div>
+        <input type="hidden" name="Empid" id="Empid" />
+        <input type="hidden" name="AdminName" id="AdminName" />
+        <input type="hidden" name="rid" id="rid" />
+    </form>
 </div>

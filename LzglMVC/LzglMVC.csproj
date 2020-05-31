@@ -415,6 +415,7 @@
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\Wage\get_wage_byid.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SqlStatement\添加邀请码.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -458,6 +459,7 @@
     <Content Include="Views\Actions\Detail.cshtml" />
     <Content Include="Views\Actions\Edit.cshtml" />
     <None Include="Views\Employee\副本2 DeptEmp.cshtml" />
+    <Content Include="Views\SysAdmin\InvitationCodeView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

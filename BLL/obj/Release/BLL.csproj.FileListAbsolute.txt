@@ -9,3 +9,14 @@ E:\C#\LzglMVC\BLL\bin\Release\Utils.pdb
 E:\C#\LzglMVC\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
 E:\C#\LzglMVC\BLL\obj\Release\BLL.dll
 E:\C#\LzglMVC\BLL\obj\Release\BLL.pdb
+D:\C#\lzglMVCOriginal\BLL\bin\Release\BLL.dll
+D:\C#\lzglMVCOriginal\BLL\bin\Release\BLL.pdb
+D:\C#\lzglMVCOriginal\BLL\bin\Release\DAL.dll
+D:\C#\lzglMVCOriginal\BLL\bin\Release\Models.dll
+D:\C#\lzglMVCOriginal\BLL\bin\Release\Utils.dll
+D:\C#\lzglMVCOriginal\BLL\bin\Release\DAL.pdb
+D:\C#\lzglMVCOriginal\BLL\bin\Release\Models.pdb
+D:\C#\lzglMVCOriginal\BLL\bin\Release\Utils.pdb
+D:\C#\lzglMVCOriginal\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+D:\C#\lzglMVCOriginal\BLL\obj\Release\BLL.dll
+D:\C#\lzglMVCOriginal\BLL\obj\Release\BLL.pdb

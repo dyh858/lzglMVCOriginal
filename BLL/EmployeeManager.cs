@@ -25,5 +25,9 @@ namespace BLL
         {
             return new EmployeeService().getEmpByIdCard(IdCard);
         }
+        public string InvitationCode(string empid)
+        {
+            return new EmployeeService().InvitationCode(empid);
+        }
     }
 }
