@@ -2,6 +2,10 @@
 @{
     SysAdmin admin= (SysAdmin)Session["CurrentAdmin"];
     string AdminName = User.Identity.Name;
+
+    //获得非直接根目录的中间目录。因为：Url.Ation的参数不能使用变量，无法动态生成权限菜单的Url
+    string RootPath = Url.Action("Index", "SysAdmin");
+    RootPath = RootPath.Substring(0, RootPath.IndexOf("SysAdmin") - 1);
 }
 <!DOCTYPE html>
 <html>
@@ -53,7 +57,7 @@
             </div>
         </div>
     </div>
-
+    <input type="hidden" name="rootpath" id="rootpath" value="@RootPath" />
     @RenderBody()
             
     <div class="footer" id="footer">

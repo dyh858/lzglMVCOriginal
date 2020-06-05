@@ -460,6 +460,7 @@
     <Content Include="Views\Actions\Edit.cshtml" />
     <None Include="Views\Employee\副本2 DeptEmp.cshtml" />
     <Content Include="Views\SysAdmin\InvitationCodeView.cshtml" />
+    <Content Include="Views\SysAdmin\RetrievePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

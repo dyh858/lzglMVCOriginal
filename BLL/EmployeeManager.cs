@@ -29,5 +29,13 @@ namespace BLL
         {
             return new EmployeeService().InvitationCode(empid);
         }
+        public Employee ShowByMobilephone(string Mobliephone)
+        {
+            return new EmployeeService().getEmpMobilePhone(Mobliephone);
+        }
+        public List<Employee> ShowByName(string name)
+        {
+            return new EmployeeService().getEmpByName(name);
+        }
     }
 }

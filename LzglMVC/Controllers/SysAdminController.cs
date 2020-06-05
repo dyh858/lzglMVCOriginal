@@ -111,7 +111,20 @@ namespace StudentManagerMVC.Controllers
         /// <returns></returns>
         public ActionResult Search(string TxtSearch) 
         {
-            Employee emp = new EmployeeManager().ShowByIdCard(TxtSearch);
+            Employee emp = null;
+            if (TxtSearch.Length == 18)
+            {
+                emp = new EmployeeManager().ShowByIdCard(TxtSearch);
+            }
+            else if(TxtSearch.Length==11)
+            {
+                emp = new EmployeeManager().ShowByMobilephone(TxtSearch);
+            }
+            else
+            {
+                emp = new EmployeeManager().show(TxtSearch);
+            }
+                        
             if(emp != null){
                 ViewBag.emp = emp;
                 SysAdmin admin = new SysAdminManager().ShowByEmpid(emp.Empid);
@@ -126,6 +139,17 @@ namespace StudentManagerMVC.Controllers
                 }
                 
             }
+            return this.Content("查询失败！");
+        }
+        public ActionResult SearchName(string TxtSearch)
+        {
+            List<Employee> list = new EmployeeManager().ShowByName(TxtSearch);
+            if(list != null)
+            {
+                String JsonList = JsonConvert.SerializeObject(list);
+                return this.Content(JsonList);
+            }
+
             return this.Content("查询失败！");
         }
         /// <summary>
@@ -152,6 +176,11 @@ namespace StudentManagerMVC.Controllers
         }
 
         public ActionResult InvitationCodeView()
+        {
+            return View();
+        }
+
+        public ActionResult RetrievePassword()
         {
             return View();
         }

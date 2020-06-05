@@ -16,3 +16,12 @@ D:\C#\lzglMVCOriginal\DAL\bin\Release\Utils.pdb
 D:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
 D:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.dll
 D:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.pdb
+E:\C#\lzglMVCOriginal\DAL\bin\Release\DAL.dll
+E:\C#\lzglMVCOriginal\DAL\bin\Release\DAL.pdb
+E:\C#\lzglMVCOriginal\DAL\bin\Release\Models.dll
+E:\C#\lzglMVCOriginal\DAL\bin\Release\Utils.dll
+E:\C#\lzglMVCOriginal\DAL\bin\Release\Models.pdb
+E:\C#\lzglMVCOriginal\DAL\bin\Release\Utils.pdb
+E:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+E:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.dll
+E:\C#\lzglMVCOriginal\DAL\obj\Release\DAL.pdb
