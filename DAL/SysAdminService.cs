@@ -190,5 +190,27 @@ namespace DAL
             }
         }
 
+        public bool Update(SysAdmin vo)
+        {
+            Encrypt enc = new Encrypt(vo.LoginPwd);
+            
+            string sql = "Update admins set AdminName='{0}', LoginPwd='{1}',empid='{2}', rid={3} WHERE loginid='{4}'";
+            sql = string.Format(sql, vo.AdminName,enc.str2,vo.empid,vo.rid,vo.LoginId);
+            try
+            {
+                if (SQLHelper.Update(sql) >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("应用程序和数据库连接出现问题！" + ex.Message);
+            }
+        }
     }
 }

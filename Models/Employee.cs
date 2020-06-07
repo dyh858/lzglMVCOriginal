@@ -17,7 +17,7 @@ namespace Models
         public string Address { get; set; }
         public string BankCard { get; set; }
         public string InvitationCode { get; set; }
-
+        public SysAdmin Admin { get; set; }
         public int getSex()
         {
             if (Gender == "男")

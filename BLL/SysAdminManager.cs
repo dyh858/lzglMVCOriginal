@@ -51,5 +51,10 @@ namespace BLL
         { 
             return new SysAdminService().FindByLoginId(loginid);
         }
+
+        public bool Update(SysAdmin vo)
+        {
+            return new SysAdminService().Update(vo);
+        }
     }
 }

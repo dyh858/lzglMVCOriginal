@@ -141,6 +141,11 @@ namespace StudentManagerMVC.Controllers
             }
             return this.Content("查询失败！");
         }
+       /// <summary>
+       /// 根据姓名查询用户
+       /// </summary>
+       /// <param name="TxtSearch"></param>
+       /// <returns></returns>
         public ActionResult SearchName(string TxtSearch)
         {
             List<Employee> list = new EmployeeManager().ShowByName(TxtSearch);
@@ -168,21 +173,82 @@ namespace StudentManagerMVC.Controllers
                 return this.Content("true");
             }
         }
-
+        /// <summary>
+        /// 请求一个验证码
+        /// </summary>
+        /// <param name="Empid"></param>
+        /// <returns></returns>
         public ActionResult ShowInvitationCode(string Empid)
         {
             string inviteCode = new EmployeeManager().InvitationCode(Empid);
             return this.Content(inviteCode);
         }
-
+        /// <summary>
+        /// 进入验证码页面
+        /// </summary>
+        /// <returns></returns>
+       
         public ActionResult InvitationCodeView()
         {
             return View();
         }
-
+        /// <summary>
+        /// 重置密码页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult RetrievePassword()
         {
             return View();
+        }
+
+        public ActionResult SearchForResetPass(string TxtSearch)
+        {
+            Employee emp = null;
+            if (TxtSearch.Length == 18)
+            {
+                emp = new EmployeeManager().ShowByIdCard(TxtSearch);
+            }
+            else if (TxtSearch.Length == 11)
+            {
+                emp = new EmployeeManager().ShowByMobilephone(TxtSearch);
+            }
+            else
+            {
+                emp = new EmployeeManager().show(TxtSearch);
+            }
+
+            if (emp != null)
+            {
+                
+                SysAdmin admin = new SysAdminManager().ShowByEmpid(emp.Empid);
+                
+                if (admin != null)
+                {
+                    emp.Admin = admin; 
+                    String JsonAdmin = JsonConvert.SerializeObject(emp);
+                    return this.Content(JsonAdmin);
+                }
+                else
+                {
+                    return this.Content("您还未注册！");
+                }
+
+            }
+            return this.Content("查询失败！");
+        }
+
+        public ActionResult ResetPassword(SysAdmin admin) 
+        {
+            if (new SysAdminManager().Update (admin))
+            {
+                ViewData["result"] = "重置密码成功！请登录:";
+                return View("AdminLogin");
+            }
+            else
+            {
+                ViewData["result"] = "重置密码失败！";
+            }
+            return View("RetrievePassword");
         }
     }
 }
