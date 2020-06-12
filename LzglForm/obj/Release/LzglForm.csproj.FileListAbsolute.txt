@@ -1,0 +1,17 @@
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe.config
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.pdb
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.csprojResolveAssemblyReference.cache
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.Properties.Resources.resources
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.csproj.GenerateResource.Cache
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.exe
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.pdb
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\BLL.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Models.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DAL.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Utils.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\BLL.pdb
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Models.pdb
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DAL.pdb
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Utils.pdb
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.FrmLogin.resources

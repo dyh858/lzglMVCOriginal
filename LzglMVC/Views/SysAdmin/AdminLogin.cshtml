@@ -10,14 +10,15 @@
     <h1>登录
         <small>没有账号？<a href="@Url.Action("Signup","SysAdmin",new{})">注册</a></small>
     </h1>
-    <form action="@Url.Action("AdminLogin","SysAdmin")" method="post">
+
+    <form action="/SysAdmin/AdminLogin" method="POST"><!--@@Url.Action("AdminLogin","SysAdmin")@@-->
         <div class="form-group">
             <label>用户名：</label>
             <input type="text" class="form-control" name="LoginId"/>@Html.ValidationMessage("LoginId")
         </div>
         <div class="form-group">
             <label>密码：</label>
-            <input type="text" class="form-control" name="LoginPwd"/>@Html.ValidationMessage("LoginPwd")
+            <input type="password" class="form-control" name="LoginPwd"/>@Html.ValidationMessage("LoginPwd")
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary btn-block" value="登录"/>

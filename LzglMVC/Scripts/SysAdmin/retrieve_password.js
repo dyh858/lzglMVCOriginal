@@ -57,7 +57,7 @@ function ShowEmp() {
         $('#rid').val(emp["Admin"]["rid"]);
 
         $('#Verify').css('display', 'block');   //工资卡验证显示
-        $('#Info').css('display', 'block');      //
+        $('#Info').css('display', 'none');      //
 
         $(document).delegate("#BankCard", "input", function () {      //每点一下键，验证一次
             if ($('#BankCard').val() != emp["BankCard"]) {  //工资卡验证未成功
@@ -98,21 +98,28 @@ function ShowEmpByName() {
             $('#NameList').append(item);
         }
 
-        $(document).delegate(".empItem", "click", function () {
-            $('#NameList').html("");
-            //alert($(this).attr("id"));
-            $.getJSON($('#rootpath').val() + "/SysAdmin/Search",
-                {
-                    TxtSearch: $(this).attr("id")
-                },
-                function (response) {
-                    //alert(JSON.stringify(response));
-                    $('#Info').html(JSON.stringify(response));
-                    ShowEmp();
-                }
-            );
-        });
+        
     } else {
         $('#Info').css('display', 'block');
     }
 }
+$(document).delegate(".empItem", "click", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    $('#NameList').html("");
+    $.ajax({
+        type: 'POST',
+        url: $('#rootpath').val() + "/SysAdmin/SearchForResetPass",
+        data: {
+            TxtSearch: $(this).attr("id")
+        },
+        success: function (response, status, xhr) {
+            $('#Info').html(response);
+            ShowEmp();
+        },
+        error: function (xhr, errorText, errorStatus) {
+            alert(xhr.status + ':' + xhr.statusText);
+        }
+    });
+});

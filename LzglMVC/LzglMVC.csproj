@@ -480,6 +480,10 @@
       <Project>{6d9d659f-4b4b-4cb9-bb66-a9bc1eaabe5e}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{f39d6d6f-5d45-4c15-9e0f-b088109c40a5}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

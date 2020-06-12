@@ -9,6 +9,7 @@ using BLL;
 using BLL.RBAC;
 using System.Web.Security;
 using Newtonsoft.Json;
+using Utils;
 
 namespace StudentManagerMVC.Controllers
 {
@@ -37,11 +38,14 @@ namespace StudentManagerMVC.Controllers
                 //用户登录是否成功
                 if (objAdmin != null)
                 {
+                    //将登录对象保存Session
+                    System.Web.HttpContext.Current.Session["CurrentAdmin"] = objAdmin;
+                    
                     //为当前用户提供一个身份验证票证，并将该票证添加到Cookie
                     FormsAuthentication.SetAuthCookie(objAdmin.AdminName, false);
                     ViewBag.info = "欢迎您：" + objAdmin.AdminName;
                     ViewData["info"] = "欢迎您：" + objAdmin.AdminName;
-                    return RedirectToAction("HRManage",objAdmin);
+                    return RedirectToAction("HRManage");
                 }
                 else
                 {
@@ -200,7 +204,11 @@ namespace StudentManagerMVC.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 为重置密码查询雇员
+        /// </summary>
+        /// <param name="TxtSearch"></param>
+        /// <returns></returns>
         public ActionResult SearchForResetPass(string TxtSearch)
         {
             Employee emp = null;
@@ -230,6 +238,9 @@ namespace StudentManagerMVC.Controllers
                 }
                 else
                 {
+                    //Echo echo = new Echo();
+                    //echo.Text = "您还未注册！";
+                    //String JsonEcho = JsonConvert.SerializeObject(echo);
                     return this.Content("您还未注册！");
                 }
 

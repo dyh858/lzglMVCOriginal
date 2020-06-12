@@ -8,3 +8,7 @@ D:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.pdb
 D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache
 D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.dll
 D:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.pdb
+E:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.dll
+E:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.pdb
+E:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.dll
+E:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.pdb

@@ -16,12 +16,12 @@ namespace DAL
             string sql = "select 月份,职工号,姓名,发放项目名称,应发合计 金额 from vw_WageWhole " +
                         "where 职工号='{0}' and 月份>='{1}' and 月份<='{2}' order by 月份";
             sql = string.Format(sql, empid, StartDate, EndDate);
-            DataTable dt = new DataTable();
+            //DataTable dt = new DataTable();
             SqlDataAdapter adapter = SQLHelper.GetAdapter(sql);
             adapter.TableMappings.Add("Table", "Wage2013");
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet);
-            dt = dataSet.Tables["Wage2013"]; 
+            DataTable dt = dataSet.Tables["Wage2013"]; 
             return new DataTableToJson().ToJson(dt);
         }
         public List<string> GetYearMonthList() 

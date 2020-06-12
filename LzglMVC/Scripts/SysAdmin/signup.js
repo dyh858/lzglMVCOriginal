@@ -113,21 +113,29 @@ function ShowEmpByName() {
             $('#NameList').append(item);
         }
 
-        $(document).delegate(".empItem", "click", function () {
-            $('#NameList').html("");
-            //alert($(this).attr("id"));
-            $.getJSON($('#rootpath').val() + "/SysAdmin/Search",
-                {
-                    TxtSearch: $(this).attr("id")
-                },
-                function (response) {
-                    //alert(JSON.stringify(response));
-                    $('#Info').html(JSON.stringify(response));
-                    ShowEmp();
-                }
-            );
-        });
+        
     } else {
         $('#Info').css('display', 'block');
     }
 }
+
+$(document).delegate(".empItem", "click", function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    $('#NameList').html("");
+    $.ajax({
+        type: 'POST',
+        url: $('#rootpath').val() + "/SysAdmin/Search",
+        data: {
+            TxtSearch: $(this).attr("id")
+        },
+        success: function (response, status, xhr) {
+            $('#Info').html(response);
+            ShowEmp();
+        },
+        error: function (xhr, errorText, errorStatus) {
+            alert(xhr.status + ':' + xhr.statusText);
+        }
+    });
+});

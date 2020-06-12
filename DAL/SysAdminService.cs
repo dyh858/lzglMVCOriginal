@@ -189,7 +189,11 @@ namespace DAL
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="vo"></param>
+        /// <returns></returns>
         public bool Update(SysAdmin vo)
         {
             Encrypt enc = new Encrypt(vo.LoginPwd);
@@ -211,6 +215,33 @@ namespace DAL
             {
                 throw new Exception("应用程序和数据库连接出现问题！" + ex.Message);
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName">LoginId,不是AdminName</param>
+        /// <returns></returns>
+        public static DataTable GetUserInfoByUserName(string userName)
+        {
+            try
+            {
+
+                //第一种写法--拼写SQL(容易SQL注入）
+//                string sql = string.Format(@"SELECT LoginId,AdminName,rid,empid 
+//                FROM admins WHERE adminName='{0}'", userName);
+                //第二种写法参数化的SQL语句
+                string sql = string.Format(@"SELECT LoginId,AdminName,rid,empid," +
+                      "LoginPwd FROM admins WHERE LoginId=@UserName");
+                SqlParameter para = new SqlParameter("@UserName",userName);
+                return SQLHelper.ExecuteDataset(sql,para);
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+
+            
         }
     }
 }

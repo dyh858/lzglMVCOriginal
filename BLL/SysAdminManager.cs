@@ -5,7 +5,9 @@ using System.Text;
 using DAL;
 using Models;
 using System.Web;
-
+using System.Data;
+using Utils;
+ 
 namespace BLL
 {
     public class SysAdminManager
@@ -21,7 +23,7 @@ namespace BLL
             if(objAdmin!=null)
             {
                 //将登录对象保存Session
-                HttpContext.Current.Session["CurrentAdmin"] = objAdmin;
+                //HttpContext.Current.Session["CurrentAdmin"] = objAdmin;
                 
             }
             return objAdmin;
@@ -55,6 +57,34 @@ namespace BLL
         public bool Update(SysAdmin vo)
         {
             return new SysAdminService().Update(vo);
+        }
+        /// <summary>
+        /// 实现系统登录（编写登录方法）
+        /// </summary>
+        /// <param name="strLoginName">登录名</param>
+        /// <param name="strLoginPwd">密码</param>
+        /// <returns></returns>
+        public bool Login(string strLoginName, string strLoginPwd)
+        {
+            try
+            {
+                //1.调用数据访问层：根据用户名得到用户信息
+                DataTable dtUser= SysAdminService.GetUserInfoByUserName(strLoginName);
+                if(dtUser.Rows.Count>0)
+                {
+                    //2.把用户信息中的密码与表示层的密码进行对比
+                    string pwd= new Encrypt(strLoginPwd).str2;
+                    if (dtUser.Rows[0]["LoginPwd"].Equals(pwd))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

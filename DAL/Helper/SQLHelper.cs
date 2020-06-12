@@ -100,5 +100,42 @@ namespace DAL
                 throw ex;
             }
         }
+        /// <summary>
+        /// 执行SQL命令
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="cmdParameters"></param>
+        /// <returns></returns>
+        public static DataTable ExecuteDataset(string sql,params SqlParameter[] cmdParameters)
+        {
+            //利用using使用资源后，自动释放
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                //打开连接，不必使用close关闭
+                conn.Open();
+
+                //设置cmd
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.CommandType = CommandType.Text;
+                                
+                if(cmdParameters!=null)
+                {
+                    foreach (SqlParameter para in cmdParameters)
+                    {
+                        cmd.Parameters.Add(para);
+
+                    }
+                }
+                //取数据
+                using(SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    return ds.Tables[0];
+                }
+            }
+        }
     }
 }

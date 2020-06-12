@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Echo.cs" />
     <Compile Include="DataTableToJson.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
