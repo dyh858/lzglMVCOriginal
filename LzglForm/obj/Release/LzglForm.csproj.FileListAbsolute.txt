@@ -15,3 +15,6 @@ E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Models.pdb
 E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DAL.pdb
 E:\C#\lzglMVCOriginal\LzglForm\bin\Release\Utils.pdb
 E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.FrmLogin.resources
+D:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe.config
+D:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.exe
+D:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.pdb

@@ -19,29 +19,33 @@ namespace DAL
         public SysAdmin AdminLogin(SysAdmin objAdmin)
         {
             Encrypt enc = new Encrypt(objAdmin.LoginPwd);
-            string sql = "select AdminName,empid,rid from admins where LoginId='{0}' and LoginPwd='{1}'";
-            sql = string.Format(sql,objAdmin.LoginId,enc.str2);
+            string sql = @"select AdminName,empid,rid from admins where LoginId=@loginId and LoginPwd=@loginPwd";
+            SqlParameter[] paras = new SqlParameter[]{
+                new SqlParameter("@loginId", objAdmin.LoginId),
+                new SqlParameter("@loginPwd", enc.str2)
+            };
             try
             {
-                SqlDataReader objReader = SQLHelper.GetReader(sql);
-                if (objReader.Read())
-                {
-                    objAdmin.AdminName = objReader["AdminName"].ToString();
-                    objAdmin.empid = objReader["empid"].ToString();
-                    objAdmin.rid = Convert.ToInt32(objReader["rid"]);
-                    objReader.Close();
-                }
-                else
-                {
-                    objAdmin = null;
-                }
+                 SqlDataReader objReader= SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
+                 if (objReader.Read())
+                 {
+                     objAdmin.AdminName = objReader["AdminName"].ToString();
+                     objAdmin.empid = objReader["empid"].ToString();
+                     objAdmin.rid = Convert.ToInt32(objReader["rid"]);
+                     objReader.Close();
+                 }
+                 else
+                 {
+                     objAdmin = null;
+                 }
+                 return objAdmin;
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 throw new Exception("应用程序和数据库连接出现问题！" + ex.Message);
             }
-            return objAdmin;
         }
+ 
         /// <summary>
         /// 注册账户
         /// </summary>
@@ -50,11 +54,17 @@ namespace DAL
         public bool insert(SysAdmin vo)
         {
             Encrypt enc = new Encrypt(vo.LoginPwd);
-            string sql = "INSERT INTO admins(LoginId,AdminName,LoginPwd,empid,rid)VALUES('{0}','{1}', '{2}','{3}',{4})";
-            sql = string.Format(sql,vo.LoginId,vo.AdminName,enc.str2,vo.empid,vo.rid);
+            string sql = string.Format(@"INSERT INTO admins(LoginId,AdminName,LoginPwd,empid,rid)VALUES(@id,@name,@pwd,@empid,@rid)");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@id",vo.LoginId),
+                new SqlParameter("@name",vo.AdminName),
+                new SqlParameter("@pwd",enc.str2 ),
+                new SqlParameter("@empid",vo.empid),
+                new SqlParameter("@rid",vo.rid),
+            };
             try
             {
-                if (SQLHelper.Update(sql) >= 1)
+                if (SqlHelper.ExecuteNonQuery(SqlHelper.connString,CommandType.Text,sql,paras) >= 1)
                 {
                     return true;
                 }

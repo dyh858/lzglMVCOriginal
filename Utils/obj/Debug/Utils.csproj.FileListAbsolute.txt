@@ -3,3 +3,8 @@ E:\C#\LzglMVC\Utils\bin\Debug\Utils.pdb
 E:\C#\LzglMVC\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
 E:\C#\LzglMVC\Utils\obj\Debug\Utils.dll
 E:\C#\LzglMVC\Utils\obj\Debug\Utils.pdb
+D:\C#\lzglMVCOriginal\Utils\bin\Debug\Utils.dll
+D:\C#\lzglMVCOriginal\Utils\bin\Debug\Utils.pdb
+D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.dll
+D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.pdb

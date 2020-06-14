@@ -15,5 +15,15 @@ namespace LzglForm
         {
             InitializeComponent();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            flCon.Width = 10;
+        }
     }
 }
