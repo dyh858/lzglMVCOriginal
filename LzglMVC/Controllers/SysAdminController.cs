@@ -124,9 +124,12 @@ namespace StudentManagerMVC.Controllers
             {
                 emp = new EmployeeManager().ShowByMobilephone(TxtSearch);
             }
-            else
+            else if(TxtSearch.Length==4)
             {
                 emp = new EmployeeManager().show(TxtSearch);
+            }
+            else if{
+                emp = new EmployeeManager().ShowByName(TxtSearch);
             }
                         
             if(emp != null){

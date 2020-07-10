@@ -12,3 +12,4 @@ E:\C#\lzglMVCOriginal\Models\bin\Release\Models.dll
 E:\C#\lzglMVCOriginal\Models\bin\Release\Models.pdb
 E:\C#\lzglMVCOriginal\Models\obj\Release\Models.dll
 E:\C#\lzglMVCOriginal\Models\obj\Release\Models.pdb
+E:\C#\lzglMVCOriginal\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
