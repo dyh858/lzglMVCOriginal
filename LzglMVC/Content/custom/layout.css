@@ -3,8 +3,7 @@
 }
 body
 {
-    /*border:1px solid red;
-    position:relative;*/
+
 }
 img
 {
@@ -15,6 +14,10 @@ img
 {
     margin-top:60px;
     margin-bottom:60px; /**/
+    /*插入视图的高设为1000，使得整个body的高
+     超过一般情况下的窗口高度，
+     避免页脚出现在页面中间*/
+    min-height:1000px;
 }
 img,.side-bar .list-group-item
 {
@@ -27,19 +30,6 @@ img,.side-bar .list-group-item
     background-repeat: no-repeat;
     background-position: center center;
 }
-/*.footer
-{
-    width:100%;
-    margin-top:20px;
-    margin-bottom:0;
-    padding:20px 0;
-    color:#777;
-    background:#eee;
-    text-align:center;
-    position:absolute;
-    bottom:0px;
-}
-*/
 .footer{
   margin-top:20px;
   padding:10px 0;
@@ -47,13 +37,5 @@ img,.side-bar .list-group-item
   color:grey;
   background-color: #eee;
   font-size:12px;
-  width:100%;
-}/*
-object
-{
-    width:100%;
-    height:50px;
+  width:100%; 
 }
-
-div:last-of-type{ background-color:red; } 
-    */

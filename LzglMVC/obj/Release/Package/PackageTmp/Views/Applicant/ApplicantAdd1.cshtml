@@ -1,0 +1,42 @@
+﻿@model Models.Applicant
+
+@{
+    ViewBag.Title = "应聘人员登记";
+    Layout = "~/Views/Shared/HRMLayout.cshtml";
+}
+<link href="~/Content/custom/admin-login.css" rel="stylesheet" />
+<div class="container container-small render">
+    <h1>应聘人员登记</h1>
+    <form action="SysAdmin/AdminLogin" method="post">
+        <div class="form-group">
+            <label>姓名：</label>
+            <input type="text" class="form-control" name="aname" value="@(Model != null ? Model.AName : "")"/><p class="err">@Html.ValidationMessage("AName")</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 left">民族：</div>
+            <div class="col-sm-12 col-md-6">
+                <input type="text" name="nationality" class="form-control" value="@(Model != null ? Model.Nationality : "")"/>@Html.ValidationMessage("Nationality")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>验证码：</label>
+            <div class="input-group">
+                <input type="text" class="form-control" name="aname" />
+                <div class="input-group-btn">
+                    <div class="btn btn-default">获取验证码</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>密码：</label>
+            <input type="text" class="form-control" name="LoginPwd" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="注册" />
+        </div>
+        <div class="form-group">
+            注册即代表你同意<a href="#">服务条款</a>
+        </div>
+    </form>
+</div>

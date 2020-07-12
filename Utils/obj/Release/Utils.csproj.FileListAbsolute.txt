@@ -12,3 +12,4 @@ E:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.dll
 E:\C#\lzglMVCOriginal\Utils\bin\Release\Utils.pdb
 E:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.dll
 E:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.pdb
+E:\C#\lzglMVCOriginal\Utils\obj\Release\Utils.csprojResolveAssemblyReference.cache

@@ -16,3 +16,4 @@ D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.Properties.Resources.resources
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.csproj.GenerateResource.Cache
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.exe
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.pdb
+D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.WinBF.Properties.Resources.resources

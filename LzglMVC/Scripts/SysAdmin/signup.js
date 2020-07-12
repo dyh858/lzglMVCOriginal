@@ -99,6 +99,7 @@ function ShowEmp() {
         $('#Verify').css('display', 'none');
     }
 }
+//根据姓名查询，返回emp集合
 function ShowEmpByName() {
     if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
         var list = JSON.parse($('#Info').html());

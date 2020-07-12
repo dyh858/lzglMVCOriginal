@@ -1,0 +1,1 @@
+alter table employees add InvitationCode char(4)

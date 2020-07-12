@@ -12,5 +12,9 @@ namespace BLL
         {
             return new DepartmentService().list();
         }
+        public Department Show(Int32 id)
+        {
+            return new DepartmentService().FindById(id);
+        }
     }
 }

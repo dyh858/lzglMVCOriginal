@@ -23,7 +23,7 @@ namespace LzglForm
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            flCon.Width = 10;
+
         }
     }
 }

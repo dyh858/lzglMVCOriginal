@@ -1,0 +1,38 @@
+﻿a:hover {
+    text-decoration: none;
+}
+body
+{
+
+}
+img
+{
+    display:block;
+    max-width:100%;
+}
+.render
+{
+    margin-top:60px;
+    margin-bottom:60px; /**/
+    min-height:1000px;
+}
+img,.side-bar .list-group-item
+{
+    border-radius:3px;
+}
+.navbar-brand {
+    background-image: url(../img/eternal-all-8.png);
+    width: 200px;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.footer{
+  margin-top:20px;
+  padding:10px 0;
+  text-align:center;
+  color:grey;
+  background-color: #eee;
+  font-size:12px;
+  width:100%; 
+}

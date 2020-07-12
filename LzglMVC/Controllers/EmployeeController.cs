@@ -118,7 +118,10 @@ namespace StudentManagerMVC.Controllers
             return View();
         }
 
-
+        public ActionResult PartialSearch()
+        {
+            return PartialView();
+        }
     }
 }
 

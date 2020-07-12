@@ -14,5 +14,6 @@ namespace Models
         public string DepType { get; set; }
         public string Line { get; set; }
         public byte Valid { get; set; }
+        public Department Upper { get; set; }
     }
 }

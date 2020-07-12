@@ -51,6 +51,7 @@
     <Compile Include="EmployeeService.cs" />
     <Compile Include="Helper\SQLHelper.cs" />
     <Compile Include="Helper\SQLHelperOfficial.cs" />
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RBAC\ActionService.cs" />
     <Compile Include="RBAC\GroupsService.cs" />

@@ -1,0 +1,139 @@
+﻿@model Models.Employee
+
+@{
+    ViewBag.Title = "DeptEmp";
+    Layout = "~/Views/Shared/HRMLayout.cshtml";
+}
+<script>
+    $(function(){
+        $.ajax({
+            type:'post',
+            url:"http://localhost:8080/pages/dept/dept_info.aspx",//http://localhost:8080/pages/dept/dept_info.aspx http://localhost:53836/asp.net/pages/dept/dept_info.aspx
+            dataType:'json',
+            success:function(response,stutas,xhr){
+                for(var i = 0; i < response.length ; i++){
+                    var obj= response[i] ;
+                    if(obj['Upper'] == '0'){
+                        $('#dept').append('<ul><li id="' + obj['DepId'] + 
+                          '">'+ obj['DepName']+ '</li></ul');
+                        
+                        var count = 0 ;
+                        for(var j = 0 ; j < response.length ; j ++){
+            
+                            var objSon = response[j] ;
+                            if(objSon['Upper'] == obj['DepId']){
+                                count ++ ;
+
+                                if(count == 1){
+                                    $('#' + obj['DepId']).append('<ul><li id="' + objSon['DepId'] +
+                                    '">'+ objSon['DepName'] +'</li></ul>');
+                                }else {
+                                    $('#' + obj['DepId']+'>ul').append('<li id="' + objSon['DepId'] +
+                                    '">'+ objSon['DepName'] +'</li>')
+                                }
+
+                                var count2 = 0 ;
+                                for(var k=0 ; k < response.length ; k++){
+                                    var objGrandson=response[k] ;
+                                    if(objGrandson['Upper'] == objSon['DepId']){
+                                        count2 ++ ;
+
+                                        if(count2 == 1){
+                                            $('#' + objSon['DepId']).append('<ul><li id="' + objGrandson['DepId'] +
+                                            '">'+ objGrandson['DepName'] +'</li></ul>');
+                                        }else {
+                                            $('#' + objSon['DepId']+'>ul').append('<li id="' + objGrandson['DepId'] +
+                                            '">'+ objGrandson['DepName'] +'</li>')
+                                        }
+                                    }
+                                }  
+                            }  
+                        }
+                        break ;
+                    }
+                }
+            }
+        });
+    });
+    $(document).delegate('li', 'dblclick', function (e) {
+        e.stopPropagation();
+        $(this).children('ul').toggle();
+        //alert($(this).children('ul').attr('id'));
+    });
+    $(document).delegate('li', 'click', function (e) {
+        $("#emp").empty();
+        e.stopPropagation();
+        //alert($(this).html());
+        $.get("/Employee/GetEmpList", { "dept": $(this).html() }, function (data, status, xhr) {
+            //alert(response);
+            var table = document.createElement('table');
+            table.border = 1;
+            //table.width = 800;
+            $(table).addClass('table table-striped  table-bordered  table-hover');
+            table.createCaption().innerHTML = '人员表';
+
+            var response = $.parseJSON(data);
+            for (var i = 0; i <= response.length; i++) {
+                if (i < response.length) {
+                    var tr = table.insertRow(i);
+                    var empAttrs = getKeys(response[i]) //获得列标题
+                    for (var j = 0 ; j < empAttrs.length ; j++) {
+                        var td = tr.insertCell(j);
+                        td.appendChild(document.createTextNode(showValue(response[i][empAttrs[j]]))); //填充单元格
+                    }
+                } else {
+                    var thead = table.createTHead();
+                    var tr = thead.insertRow(0);
+                    var empAttrs = getKeys(response[0])//获得列标题
+                    for (var j = 0 ; j < empAttrs.length ; j++) {
+                        var td = tr.insertCell(j);
+                        td.appendChild(document.createTextNode(empAttrs[j]));//填充列标题
+                    }
+                }
+            }
+
+            $("#emp").append(table).css("overflow-x", "scroll");
+            $("td").css("white-space", "nowrap");
+        });
+    });
+    var getKeys = function (obj) {
+        var keys = [];
+        for (var key in obj) {
+            keys.push(key);
+        }
+        return keys;
+    }
+    function formatJsonDate(strTime) {
+        var t = strTime.slice(6, 19)
+        var dt = new Date(parseInt(t));
+        var year = dt.getFullYear();
+        var month = dt.getMonth() + 1;
+        var date = dt.getDate();
+        var hour = dt.getHours();
+        var minute = dt.getMinutes();
+        var second = dt.getSeconds();
+        return year + "-" + month + "-" + date;
+    }
+    function showValue(str) {
+        if (str.indexOf("/Date(") == 0) {
+            if (str == "/Date(-2209017600000+0800)/") {
+                return "";
+            } else {
+                return formatJsonDate(str);
+            }
+        } else {
+            return str;
+        }
+    }
+</script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="dept"></div>
+        </div>
+        <div class="col-sm-8">
+            <div id="emp"></div>
+        </div>
+    </div>
+</div>
+

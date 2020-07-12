@@ -35,7 +35,35 @@ namespace DAL
             {
                 throw new Exception(ex.Message.ToString());
             }
+        }
 
+        public Department FindById(Int32 id)
+        {
+            string sql = string.Format(@"SELECT depname,upperid,deptype,line FROM department WHERE depid=@depid");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@depid",id),
+            };
+            try
+            {
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
+                Department vo = null;
+                if (reader.Read())
+                {
+                    vo = new Department
+                    {
+                        DepName = reader["postname"].ToString(),
+                        Upper = new DepartmentService().FindById(Convert.ToInt32(reader["upperid"])),
+                        DepType=reader["deptype"].ToString(),
+                        Line=reader["line"].ToString(),
+                    };
+
+                }
+                return vo;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("应用程序和数据库连接出现问题！" + ex.Message);
+            }
         }
     }
 }

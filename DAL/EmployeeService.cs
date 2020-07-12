@@ -13,7 +13,8 @@ namespace DAL
     public class EmployeeService
     {
         private const string initSQL = "SELECT empid,name,Sex,birthdate,idcard,mobilephone," +
-                "住址,银行账号,invitationcode from employees ";
+                "住址,银行账号,invitationcode,postid from employees ";
+
         /// <summary>
         /// 为雇员分配来自数据库的值
         /// </summary>
@@ -31,6 +32,7 @@ namespace DAL
                 Address = objReader["住址"].ToString(),
                 BankCard = objReader["银行账号"].ToString(),
                 InvitationCode = objReader["invitationcode"].ToString(),
+                Position=new PostService().FindById(Convert.ToInt32(objReader["postid"])),
             };
             vo.setSex(Convert.ToInt32(objReader["Sex"]));
             return vo;
@@ -74,9 +76,11 @@ namespace DAL
         /// <returns></returns>
         public Employee getEmpById(string Empid)
         {
-            string sql = initSQL +  "WHERE empid='{0}'";
-            sql = string.Format(sql, Empid);
-            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            string sql =string.Format(@""+ initSQL +  "WHERE empid=@empid");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@empid",Empid),
+            };
+            SqlDataReader objReader = SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
             Employee vo = null;
 
             if (objReader.Read())
@@ -94,18 +98,27 @@ namespace DAL
         /// <returns></returns>
         public Employee getEmpByIdCard(string IdCard)
         {
-            string sql = initSQL + "WHERE idcard='{0}'";
-            sql = string.Format(sql, IdCard);
-            SqlDataReader objReader = SQLHelper.GetReader(sql);
-            Employee vo = null;
-
-            if (objReader.Read())
+            string sql =string.Format(@""+ initSQL + "WHERE idcard=@idcard");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@idcard",IdCard),
+            };
+            try
             {
-                vo = Assign(objReader);
-            }
+                SqlDataReader objReader = SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
+                Employee vo = null;
 
-            objReader.Close();
-            return vo;
+                if (objReader.Read())
+                {
+                    vo = Assign(objReader);
+                }
+
+                objReader.Close();
+                return vo;
+            }
+            catch (Exception ex )
+            { 
+                throw ex;
+            }      
         }
         /// <summary>
         /// 根据电话号码查询职工
@@ -114,18 +127,27 @@ namespace DAL
         /// <returns></returns>
         public Employee getEmpMobilePhone(string Mobilephone)
         {
-            string sql = initSQL + "WHERE mobilephone='{0}'";
-            sql = string.Format(sql, Mobilephone);
-            SqlDataReader objReader = SQLHelper.GetReader(sql);
-            Employee vo = null;
-
-            if (objReader.Read())
+            string sql = string.Format(@""+ initSQL + "WHERE mobilephone=@phone");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@phone",Mobilephone),
+            };
+            try
             {
-                vo = Assign(objReader);
-            }
+                SqlDataReader objReader = SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
+                Employee vo = null;
 
-            objReader.Close();
-            return vo;
+                if (objReader.Read())
+                {
+                    vo = Assign(objReader);
+                }
+
+                objReader.Close();
+                return vo;
+            }
+            catch (Exception ex)
+            {
+                throw ex ;
+            }
         }
         /// <summary>
         /// 修改雇员
@@ -182,18 +204,27 @@ namespace DAL
         /// <returns></returns>
         public List<Employee> getEmpByName(string name)
         {
-            string sql = initSQL + "WHERE name='{0}'";
-            sql = string.Format(sql, name);
-            SqlDataReader objReader = SQLHelper.GetReader(sql);
-            List<Employee> list = new List<Employee>();
-
-            while (objReader.Read())
+            string sql = string.Format(@""+ initSQL + "WHERE name=@name");
+            SqlParameter[] paras = new SqlParameter[] {
+                new SqlParameter("@name",name),
+            };
+            try
             {
-                list.Add(Assign(objReader));
-            }
+                SqlDataReader objReader = SqlHelper.ExecuteReader(SqlHelper.connString, CommandType.Text, sql, paras);
+                List<Employee> list = new List<Employee>();
 
-            objReader.Close();
-            return list;
+                while (objReader.Read())
+                {
+                    list.Add(Assign(objReader));
+                }
+
+                objReader.Close();
+                return list;
+            }
+            catch (Exception ex)
+            {              
+                throw ex;
+            }
         }
 
     }

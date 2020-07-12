@@ -43,6 +43,10 @@
     <Compile Include="Applicant.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Post.cs" />
+    <Compile Include="PostProp\PostGrade.cs" />
+    <Compile Include="PostProp\PostProperty.cs" />
+    <Compile Include="PostProp\PostSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RBAC\Actions.cs" />
     <Compile Include="RBAC\Groups.cs" />
