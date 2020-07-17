@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using Models.RBAC;
+
 
 namespace DAL.RBAC
 {
@@ -72,7 +74,7 @@ namespace DAL.RBAC
                 {
                     all.Add(new Role()
                     {
-                        Rid= Convert.ToInt32(reader["rid"]),
+                        Rid = Convert.ToInt32(reader["rid"]),
                         Title = reader["title"].ToString(),
                         Note = reader["note"].ToString(),
                     });
@@ -88,9 +90,14 @@ namespace DAL.RBAC
         //
         public bool Modify(Role vo)
         {
-            string sql = "UPDATE Role set title='{0}',note={1} WHERE rid={2}";
-            sql = string.Format(sql, vo.Title,vo.Note,vo.Rid);
-            int result = SQLHelper.Update(sql);
+            string sql = string.Format(@"UPDATE Role set title=@title,note=@note WHERE rid=@rid");
+            SqlParameter[] para = new SqlParameter[] { 
+                new SqlParameter("@title",vo.Title),
+                new SqlParameter("@note",vo.Note),
+                new SqlParameter("@rid",vo.Rid),
+            };
+
+            int result = SqlHelper.ExecuteNonQuery(SqlHelper.connString, CommandType.Text, sql, para);
             if (result >= 1)
             {
                 return true;
@@ -128,7 +135,7 @@ namespace DAL.RBAC
         public bool FindGroupsByRidGid(int rid, int gid)
         {
             string sql = "SELECT rid,gid FROM role_groups WHERE rid={0} and gid={1}";
-            sql = string.Format(sql,rid,gid);
+            sql = string.Format(sql, rid, gid);
             try
             {
                 SqlDataReader reader = SQLHelper.GetReader(sql);
@@ -154,9 +161,10 @@ namespace DAL.RBAC
         /// <param name="rid">角色ID</param>
         /// <param name="gid">权限组ID</param>
         /// <returns>成功返回true</returns>
-        public bool AllotGroups(int rid,int gid) {
+        public bool AllotGroups(int rid, int gid)
+        {
             string sql = "INSERT INTO role_groups(rid,gid)VALUES({0},{1})";
-            sql = string.Format(sql,rid,gid);
+            sql = string.Format(sql, rid, gid);
             try
             {
                 if (SQLHelper.Update(sql) >= 1)
@@ -179,7 +187,7 @@ namespace DAL.RBAC
         /// <param name="rid"></param>
         /// <param name="gid"></param>
         /// <returns></returns>
-        public bool RemoveGroups(int rid,int gid)
+        public bool RemoveGroups(int rid, int gid)
         {
             string sql = "DELETE role_groups WHERE rid={0} and gid={1}";
             sql = string.Format(sql, rid, gid);

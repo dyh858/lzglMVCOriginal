@@ -10,6 +10,9 @@ img
     display:block;
     max-width:100%;
 }
+.container-small {
+    width:500px;
+}
 .render
 {
     margin-top:60px;

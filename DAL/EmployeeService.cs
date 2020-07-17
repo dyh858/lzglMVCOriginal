@@ -22,18 +22,17 @@ namespace DAL
         /// <returns></returns>
         private Employee Assign(SqlDataReader objReader)
         {
-            Employee vo = new Employee()  //类的实例初始化器
-            {
-                Empid = objReader["empid"].ToString(),
-                Name = objReader["name"].ToString(),
-                Birthdate = Convert.ToDateTime(objReader["birthdate"]).ToString("yyyy-MM-dd"),
-                Idcard = objReader["idcard"].ToString(),
-                MobilePhone = objReader["mobilephone"].ToString(),
-                Address = objReader["住址"].ToString(),
-                BankCard = objReader["银行账号"].ToString(),
-                InvitationCode = objReader["invitationcode"].ToString(),
-                Position=new PostService().FindById(Convert.ToInt32(objReader["postid"])),
-            };
+            Employee vo = new Employee();  
+            
+            vo.Empid = objReader["empid"].ToString();
+            vo.Name = objReader["name"].ToString();
+            vo.Birthdate =objReader["birthdate"]!=DBNull.Value ? Convert.ToDateTime(objReader["birthdate"]).ToString("yyyy-MM-dd") : String.Empty.ToString();
+            vo.Idcard = objReader["idcard"].ToString();
+            vo.MobilePhone = objReader["mobilephone"].ToString();
+            vo.Address = objReader["住址"].ToString();
+            vo.BankCard = objReader["银行账号"].ToString();
+            vo.InvitationCode = objReader["invitationcode"].ToString();
+            vo.Position = objReader["postid"] != DBNull.Value? new PostService().FindById(Convert.ToInt32(objReader["postid"])) :null ;
             vo.setSex(Convert.ToInt32(objReader["Sex"]));
             return vo;
         }        

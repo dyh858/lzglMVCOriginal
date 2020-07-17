@@ -49,13 +49,11 @@ namespace DAL
                 Department vo = null;
                 if (reader.Read())
                 {
-                    vo = new Department
-                    {
-                        DepName = reader["postname"].ToString(),
-                        Upper = new DepartmentService().FindById(Convert.ToInt32(reader["upperid"])),
-                        DepType=reader["deptype"].ToString(),
-                        Line=reader["line"].ToString(),
-                    };
+                    vo = new Department();
+                    vo.DepName = reader["depname"].ToString();
+                    vo.Upper = new DepartmentService().FindById(Convert.ToInt32(reader["upperid"]));
+                    vo.DepType=reader["deptype"].ToString();
+                    vo.Line = reader["line"].ToString();
 
                 }
                 return vo;

@@ -1,69 +1,57 @@
 ﻿@model Models.Employee
 
-<link href="~/Content/custom/admin-login.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-
+<style>
+    #NameList{
+        position:absolute;
+        z-index:9999;
+        display:none;
+        left:20px;
+    }
+    #partial{
+        position:relative;
+    }/**/
+</style>
 <!--查询分布视图：提供结果，返回Employee的列表-->
-<div class="container container-small render">
-    <!--查询选项卡-->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#IdcardEmpidSearch" data-toggle="tab">身份证手机职工号查询</a></li>
-        <li><a href="#NameSearch" data-toggle="tab">姓名查询</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade in active" id="IdcardEmpidSearch">
-            @using (Ajax.BeginForm("Search", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmp" }))
-            {
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号" />
-                        <div class="input-group-btn">
-                            <input type="submit" class="btn btn-default" value="查 询" />
-                        </div>
+<div id="partial">
+    <div class="container container-small">
+        @using (Ajax.BeginForm("Search", "SysAdmin", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }))
+        {
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号/姓名" />
+                    <div class="input-group-btn">
+                        <input type="submit" class="btn btn-default" value="查 询" />
                     </div>
                 </div>
-            }
-        </div>
-        <div class="tab-pane fade" id="NameSearch">
-            @using (Ajax.BeginForm("SearchName", "SysAdmin", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpByName" }))
-            {
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="TxtSearch" placeholder="姓名" />
-                        <div class="input-group-btn">
-                            <input type="submit" class="btn btn-default" value="查 询" />
-                        </div>
-                    </div>
-                </div>
-            }
-            <div id="NameList"></div>
-        </div>
+            </div>
+        }
+        
+        <ol class="reg_error"></ol>
+        <div class="form-group" id="Info"></div>
     </div>
-
-    <ol class="reg_error"></ol>
-    <div class="form-group" id="Info"></div>
+    <div id="NameList" class="list-group"></div>
 </div>
 <script>
     //根据姓名查询，返回emp集合
-    function ShowEmpByName() {
+    function ShowEmpList() {
         if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
             var list = JSON.parse($('#Info').html());
             $('#Info').css('display', 'none');      //
-            $('#NameList').remove('.empItem');     //清空列表
+            $('#NameList .empItem').remove();     //清空列表
             var item = "";
             for (var i = 0; i < list.length; i++) {
-                item = '<div class="empItem" id="' + list[i]["Empid"] + '"><a href="#"><td>' +
+                item = '<a href="#" class="empItem list-group-item" id="' + list[i]["Empid"] + '" name="' + list[i]["Name"] +
+                    '">' +
                     list[i]["Name"] + ',' +
                     list[i]["Gender"] + ',' +
                     list[i]["Idcard"] + ',' +
                     list[i]["Position"]["Dept"]["DepName"] +
-                    '</td></a></div>';
+                    '</a>';
                 $('#NameList').append(item);
+                $('#NameList').css('display', 'block');
             }
-
-
         } else {
             $('#Info').css('display', 'block');
         }

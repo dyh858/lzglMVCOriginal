@@ -65,10 +65,10 @@ namespace LzglMVC.Controllers.RBAC
         /// 编辑页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult Edit()
+        public ActionResult Edit(Int32 id)
         {
-            int aid = Convert.ToInt32(Request.Params["aid"]);
-            Role vo = new RoleManager().show(aid);
+            //int rid = Convert.ToInt32(Request.Params["Rid"]);
+            Role vo = new RoleManager().show(id);
 
             return View("Edit", vo);
         }
@@ -80,11 +80,11 @@ namespace LzglMVC.Controllers.RBAC
         {
             if (new RoleManager().Modify(vo))
             {
-                ViewData["result"] = "修改人员成功！";
+                ViewData["result"] = "修改成功！";
             }
             else
             {
-                ViewData["result"] = "修改人员失败！";
+                ViewData["result"] = "修改失败！";
             }
 
             return View("Edit", vo);

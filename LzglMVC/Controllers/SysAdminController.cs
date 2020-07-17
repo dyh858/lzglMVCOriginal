@@ -10,6 +10,7 @@ using BLL.RBAC;
 using System.Web.Security;
 using Newtonsoft.Json;
 using Utils;
+using System.Text.RegularExpressions;
 
 namespace StudentManagerMVC.Controllers
 {
@@ -108,40 +109,33 @@ namespace StudentManagerMVC.Controllers
         }
         /// <summary>
         /// 根据类容进行搜索，没找到返回“查询失败！”，
-        /// 在雇员中找到，用empid在用户中查找，如果找到，返回“您已注册！”
         /// 如未找到，返回雇员类的json数据
         /// </summary>
         /// <param name="TxtSearch"></param>
         /// <returns></returns>
         public ActionResult Search(string TxtSearch) 
         {
-            Employee emp = null;
-            if (TxtSearch.Length == 18)
+            List<Employee> list =new List<Employee>();
+            if (new Regex("^\\d{17}[0-9X]{1}$").Match(TxtSearch).Success)
             {
-                emp = new EmployeeManager().ShowByIdCard(TxtSearch);
+                list.Add(new EmployeeManager().ShowByIdCard(TxtSearch));
             }
-            else if(TxtSearch.Length==11)
+            else if(new Regex("^\\d{11}$").Match(TxtSearch).Success)
             {
-                emp = new EmployeeManager().ShowByMobilephone(TxtSearch);
+                list.Add(new EmployeeManager().ShowByMobilephone(TxtSearch));
             }
-            else 
+            else if (new Regex("^[A-Za-z0-9]{4}$").Match(TxtSearch).Success)
             {
-                emp = new EmployeeManager().show(TxtSearch);
+                list.Add(new EmployeeManager().show(TxtSearch));
+            }
+            else
+            {
+                list = new EmployeeManager().ShowByName(TxtSearch);
             }
                         
-            if(emp != null){
-                ViewBag.emp = emp;
-                SysAdmin admin = new SysAdminManager().ShowByEmpid(emp.Empid);
-                if (admin == null)
-                {
-                    String JsonEmp = JsonConvert.SerializeObject(emp);
-                    return this.Content(JsonEmp);
-                }
-                else
-                {
-                    return  this.Content("您已注册！");
-                }
-                
+            if(list.Count>=1){
+                    String JsonEmp = JsonConvert.SerializeObject(list);
+                    return this.Content(JsonEmp);  
             }
             return this.Content("查询失败！");
         }

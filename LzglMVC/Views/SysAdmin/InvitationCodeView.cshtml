@@ -4,7 +4,37 @@
     ViewBag.Title = "生成邀请码";
     Layout = "~/Views/Shared/HRMLayout.cshtml";
 }
-<div class="container container-small render">
+<div class="container container-small">
     <h1>生成邀请码</h1>
-    @Html.Action("PartialSearch", "Employee");
+    @Html.Action("PartialSearch", "Employee")
+    <div id="Verify" style="display:none;">
+        <p>点击下面“生成”按钮为<span id="Name"></span>分配一个邀请码：</p>
+        @using (Ajax.BeginForm("ShowInvitationCode", new AjaxOptions { UpdateTargetId = "Code" }))
+        {
+            <div class="form-group">
+                <input type="hidden" name="Empid"  id="Empid"/>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <input type="submit" class="btn btn-default" value="生  成" />
+                    </div>
+                    <div class="form-control" id="Code"></div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
+
+<script>
+    $(function () {
+        $(document).delegate(".empItem", "click", function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            $('#NameList').css('display', 'none');
+            $('#Name').html($(this).attr("name"));
+            $('#empid').val($(this).attr("id"));
+            $('#Verify').css('display', 'block');
+        });
+    });
+
+</script>

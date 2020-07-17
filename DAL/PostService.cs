@@ -51,13 +51,12 @@ namespace DAL
                 Post vo = null;
                 if (reader.Read())
                 {
-                    vo = new Post
-                    {
-                        PostName=reader["postname"].ToString(),
-                        Dept=new DepartmentService().FindById(Convert.ToInt32(reader["post_dep_id"])),
-                        Team = new DepartmentService().FindById(Convert.ToInt32(reader["post_team_id"])),
-
-                    };           
+                    vo = new Post();
+                    
+                    vo.PostName=reader["postname"].ToString();
+                    vo.Dept=new DepartmentService().FindById(Convert.ToInt32(reader["post_dep_id"]));
+                    vo.Team = new DepartmentService().FindById(Convert.ToInt32(reader["post_team_id"]));
+                
                 }
                 return vo;
             }

@@ -2,7 +2,6 @@ E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe.config
 E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe
 E:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.pdb
 E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.csprojResolveAssemblyReference.cache
-E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.Properties.Resources.resources
 E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.csproj.GenerateResource.Cache
 E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.exe
 E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.pdb
@@ -18,3 +17,16 @@ E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.FrmLogin.resources
 D:\C#\lzglMVCOriginal\LzglForm\bin\Release\LzglForm.exe.config
 D:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.exe
 D:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.pdb
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.Charts.Design.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.Charts.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.Keyboard.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.Layout.Design.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.Layout.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.Schedule.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar.SuperGrid.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.DotNetBar2.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.Instrumentation.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.SuperGrid.Design.dll
+E:\C#\lzglMVCOriginal\LzglForm\bin\Release\DevComponents.TreeGX.dll
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.FrmMain.resources
+E:\C#\lzglMVCOriginal\LzglForm\obj\Release\LzglForm.WinBF.Properties.Resources.resources

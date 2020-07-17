@@ -105,7 +105,12 @@
     <input type="hidden" name="rootpath" id="rootpath" value="@RootPath" />
     <input type="hidden" name="empid" id="empid" value="@admin.empid" />
     <input type="hidden" name="rid" id="rid" value="@rid" />
-    @RenderBody()
-    <div class="footer" style="position:absolute;bottom:0px;">联系我们 | www.858.com | 版权所有</div>
+    <div class="render">
+        @RenderBody()
+    </div>
+
+    <div class="footer" id="footer">
+        联系我们｜www.858.com All Right Reserve 版权所有
+    </div>
 </body>
 </html>

@@ -55,8 +55,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RBAC\ActionService.cs" />
     <Compile Include="RBAC\GroupsService.cs" />
-    <Compile Include="RBAC\RightService.cs" />
     <Compile Include="RBAC\RoleService.cs" />
+    <Compile Include="RBAC\RightService.cs" />
     <Compile Include="SysAdminService.cs" />
     <Compile Include="WageService.cs" />
   </ItemGroup>
