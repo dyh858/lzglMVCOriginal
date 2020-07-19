@@ -2,44 +2,73 @@
 
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
 <style>
     #NameList{
         position:absolute;
         z-index:9999;
         display:none;
         left:20px;
+        top:34px;
+        clear:both;
     }
-    #partial{
-        position:relative;
-    }/**/
+    #error-info {
+        position: absolute;
+        z-index: 9999;
+        top:34px;
+        left:20px;
+        color:red;
+    }
+    #partial {
+        position: relative;
+        /*border: 1px solid red;
+        */
+    }
+    #search-result {
+        width:100%;
+        height:34px;
+    }
 </style>
 <!--查询分布视图：提供结果，返回Employee的列表-->
 <div id="partial">
-    <div class="container container-small">
-        @using (Ajax.BeginForm("Search", "SysAdmin", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }))
-        {
-            <div class="form-group">
-                <div class="input-group">
-                    <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号/姓名" />
-                    <div class="input-group-btn">
-                        <input type="submit" class="btn btn-default" value="查 询" />
-                    </div>
+    @using (Ajax.BeginForm("Search", "SysAdmin", new { }, new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }, new{id="frm-search" }))
+    {
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号/姓名" />
+                <div class="input-group-btn">
+                    <input type="submit" class="btn btn-default" value="查 询" />
                 </div>
             </div>
-        }
-        
-        <ol class="reg_error"></ol>
-        <div class="form-group" id="Info"></div>
-    </div>
+        </div>
+    }
+    <div id="search-result" class="list-group"></div>
+    <div id="Info" style="display:none;"></div>
     <div id="NameList" class="list-group"></div>
+    <div id="error-info"></div>
 </div>
+
 <script>
+    $(function () {
+        //身份证手机职工号查询表单
+        $('#frm-search').validate({
+            errorLabelContainer: '#error-info',
+            rules: {
+                TxtSearch: {
+                    required: true,
+                }
+            },
+            messages: {
+                TxtSearch: "查询类容不能为空！",
+            }
+        });
+    });
     //根据姓名查询，返回emp集合
     function ShowEmpList() {
         if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
             var list = JSON.parse($('#Info').html());
-            $('#Info').css('display', 'none');      //
             $('#NameList .empItem').remove();     //清空列表
+            $('#search-result .empItem').remove();
             var item = "";
             for (var i = 0; i < list.length; i++) {
                 item = '<a href="#" class="empItem list-group-item" id="' + list[i]["Empid"] + '" name="' + list[i]["Name"] +
@@ -49,11 +78,25 @@
                     list[i]["Idcard"] + ',' +
                     list[i]["Position"]["Dept"]["DepName"] +
                     '</a>';
-                $('#NameList').append(item);
-                $('#NameList').css('display', 'block');
+                if (list.length == 1) {
+                    $('#search-result').append(item);
+                    Transmit(list[i]["Empid"]);
+                } else {
+                    $('#NameList').append(item);
+                    $('#NameList').css('display', 'block');
+                }
             }
         } else {
-            $('#Info').css('display', 'block');
+            $('#search-result').html('没有查询结果！');
         }
     }
+    $(document).delegate(".empItem", "click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        $('#NameList').css('display', 'none');
+        $('#search-result .empItem').remove();
+        $('#search-result').append($(this));
+        Transmit($(this).attr('id'));
+    });
 </script>

@@ -7,8 +7,8 @@
 <div class="container container-small">
     <h1>生成邀请码</h1>
     @Html.Action("PartialSearch", "Employee")
-    <div id="Verify" style="display:none;">
-        <p>点击下面“生成”按钮为<span id="Name"></span>分配一个邀请码：</p>
+    <div id="Verify">
+        <p>点击下面“生成”按钮,分配一个邀请码：</p>
         @using (Ajax.BeginForm("ShowInvitationCode", new AjaxOptions { UpdateTargetId = "Code" }))
         {
             <div class="form-group">
@@ -25,16 +25,8 @@
 </div>
 
 <script>
-    $(function () {
-        $(document).delegate(".empItem", "click", function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-
-            $('#NameList').css('display', 'none');
-            $('#Name').html($(this).attr("name"));
-            $('#empid').val($(this).attr("id"));
-            $('#Verify').css('display', 'block');
-        });
-    });
+    function Transmit(empid) {
+        $('#Empid').val(empid);
+    }
 
 </script>
