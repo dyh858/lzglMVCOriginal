@@ -34,6 +34,7 @@ namespace DAL
             vo.InvitationCode = objReader["invitationcode"].ToString();
             vo.Position = objReader["postid"] != DBNull.Value? new PostService().FindById(Convert.ToInt32(objReader["postid"])) :null ;
             vo.setSex(Convert.ToInt32(objReader["Sex"]));
+            vo.Admin = new SysAdminService().FindByEmpid(objReader["empid"].ToString());
             return vo;
         }        
 
@@ -66,6 +67,8 @@ namespace DAL
                 });
             }
             objReader.Close();
+            objReader.Dispose();
+            
             return list;
         }
         /// <summary>
@@ -88,6 +91,7 @@ namespace DAL
             }
 
             objReader.Close();
+            objReader.Dispose();
             return vo;
         }
         /// <summary>
@@ -112,6 +116,7 @@ namespace DAL
                 }
 
                 objReader.Close();
+                objReader.Dispose();
                 return vo;
             }
             catch (Exception ex )
@@ -141,6 +146,7 @@ namespace DAL
                 }
 
                 objReader.Close();
+                objReader.Dispose();
                 return vo;
             }
             catch (Exception ex)
@@ -218,6 +224,7 @@ namespace DAL
                 }
 
                 objReader.Close();
+                objReader.Dispose();
                 return list;
             }
             catch (Exception ex)

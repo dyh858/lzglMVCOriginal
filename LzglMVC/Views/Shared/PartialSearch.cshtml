@@ -29,9 +29,9 @@
         height:34px;
     }
 </style>
-<!--查询分布视图：提供结果，返回Employee的列表-->
+<!--查询分布视图：必须在使用页面定义Transmit函数，然后将查询结果的Employee以JSON对象格式传过去-->
 <div id="partial">
-    @using (Ajax.BeginForm("Search", "SysAdmin", new { }, new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }, new{id="frm-search" }))
+    @using (Ajax.BeginForm("Search", "SysAdmin", new { }, new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }, new{id="frm-search"}))
     {
         <div class="form-group">
             <div class="input-group">
@@ -46,6 +46,7 @@
     <div id="Info" style="display:none;"></div>
     <div id="NameList" class="list-group"></div>
     <div id="error-info"></div>
+    
 </div>
 
 <script>
@@ -67,11 +68,11 @@
     function ShowEmpList() {
         if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
             var list = JSON.parse($('#Info').html());
-            $('#NameList .empItem').remove();     //清空列表
-            $('#search-result .empItem').remove();
+            $('#NameList .list-group-item').remove();     //清空列表
+            $('#search-result .list-group-item').remove();
             var item = "";
             for (var i = 0; i < list.length; i++) {
-                item = '<a href="#" class="empItem list-group-item" id="' + list[i]["Empid"] + '" name="' + list[i]["Name"] +
+                item = '<a href="#" class="empItem list-group-item" id="' + i + '" name="' + list[i]["Name"] +
                     '">' +
                     list[i]["Name"] + ',' +
                     list[i]["Gender"] + ',' +
@@ -79,8 +80,9 @@
                     list[i]["Position"]["Dept"]["DepName"] +
                     '</a>';
                 if (list.length == 1) {
-                    $('#search-result').append(item);
-                    Transmit(list[i]["Empid"]);
+                    $('#search-result').append(item).children('a').removeClass("empItem");
+                    //$('#search-result a').removeClass("empItem");
+                    Transmit(list[i]);//传JSON对象给外接函数
                 } else {
                     $('#NameList').append(item);
                     $('#NameList').css('display', 'block');
@@ -89,6 +91,7 @@
         } else {
             $('#search-result').html('没有查询结果！');
         }
+        $("[type=submit]").prop("disabled", false);
     }
     $(document).delegate(".empItem", "click", function (e) {
         e.stopPropagation();
@@ -96,7 +99,16 @@
 
         $('#NameList').css('display', 'none');
         $('#search-result .empItem').remove();
+        $(this).removeClass("empItem");
         $('#search-result').append($(this));
-        Transmit($(this).attr('id'));
+        Transmit(JSON.parse($('#Info').html())[$(this).attr('id')]);//传JSON对象给外接函数
     });
+    /*$(document).delegate("#frm-search", "submit", function (e) {
+        e.preventDefault();
+        $("[type=submit]").prop("disabled", true);
+        return confirm;
+    })*/
+    function confirm() {
+        return false;
+    }
 </script>

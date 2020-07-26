@@ -9,12 +9,12 @@ using System.Web.Script.Serialization;
 
 namespace StudentManagerMVC.Controllers
 {
-    [Authorize]
+    
     public class EmployeeController : Controller
     {
         //
         // GET: /Employee/
-
+        [Authorize]
         public ActionResult Index()
         {
             return View("DeptEmp");
@@ -38,6 +38,7 @@ namespace StudentManagerMVC.Controllers
         /// </summary>
         /// <param name="deptName"></param>
         /// <returns></returns>
+        [Authorize]
         public ActionResult GetEmpList(string dept)
         {
             List<Employee> empList = new EmployeeManager().GetEmployeeByDept(dept);
@@ -53,6 +54,7 @@ namespace StudentManagerMVC.Controllers
         /// <param name="offset">页码</param>
         /// <param name="dept">部门名称</param>
         /// <returns></returns>
+        [Authorize]
         public JsonResult GetEmpListJson(int limit, int offset, string dept)
         {
             List<Employee> empList = new EmployeeManager().GetEmployeeByDept(dept);
@@ -64,6 +66,7 @@ namespace StudentManagerMVC.Controllers
         /// 根据职工号查询职工
         /// </summary>
         /// <returns></returns>
+        [Authorize]
         public ActionResult getEmpDetail()
         {
             string empid = Request.QueryString["empId"];
@@ -73,6 +76,7 @@ namespace StudentManagerMVC.Controllers
             //调用带Model的重载的视图方法
             return View("EmpDetail", emp);
         }
+        [Authorize]
         public ActionResult EmployeeEdit()
         {
             string empid = Request.QueryString["empId"];
@@ -82,7 +86,7 @@ namespace StudentManagerMVC.Controllers
             //调用带Model的重载的视图方法
             return View("EmployeeEdit", emp);
         }
-
+        [Authorize]
         public ActionResult EmployeeAdminLogin(SysAdmin objAdmin)
         {
             if (ModelState.IsValid)
@@ -96,7 +100,7 @@ namespace StudentManagerMVC.Controllers
             }
 
         }
-
+        [Authorize]
         public ActionResult Edit()
         {
             Employee vo = new Employee()
@@ -113,6 +117,7 @@ namespace StudentManagerMVC.Controllers
 
             return View("EmployeeManage");
         }
+        [Authorize]
         public ActionResult DeptEmp()
         {
             return View();

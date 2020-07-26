@@ -11,7 +11,7 @@ img
     max-width:100%;
 }
 .container-small {
-    width:500px;
+    max-width:500px;
     /*border:1px solid green;*/
 }
 .render

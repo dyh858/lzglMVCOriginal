@@ -33,6 +33,7 @@ namespace DAL
                      objAdmin.empid = objReader["empid"].ToString();
                      objAdmin.rid = Convert.ToInt32(objReader["rid"]);
                      objReader.Close();
+                     objReader.Dispose();
                  }
                  else
                  {

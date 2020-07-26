@@ -37,6 +37,7 @@ namespace DAL
             finally
             {
                 conn.Close();
+                conn.Dispose();
             }
         }
         /// <summary>
@@ -61,6 +62,7 @@ namespace DAL
             finally
             {
                 conn.Close();
+                conn.Dispose();
             }
         }
         /// <summary>
@@ -80,6 +82,7 @@ namespace DAL
             catch (Exception ex)
             {
                 conn.Close();
+                conn.Dispose();
                 throw ex;
             }
         }
@@ -97,6 +100,7 @@ namespace DAL
             catch (Exception ex)
             {
                 conn.Close();
+                conn.Dispose();
                 throw ex;
             }
         }
