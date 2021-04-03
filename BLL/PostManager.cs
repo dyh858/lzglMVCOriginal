@@ -19,5 +19,29 @@ namespace BLL
                 throw ex;
             }      
         }
+        public List<Post> list()
+        {
+            try
+            {
+                return new PostService().FindAll(); 
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public String getTable()
+        {
+            try
+            {
+                return new PostService().getTable();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

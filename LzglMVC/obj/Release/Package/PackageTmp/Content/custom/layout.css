@@ -10,10 +10,17 @@ img
     display:block;
     max-width:100%;
 }
+.container-small {
+    max-width:500px;
+    /*border:1px solid green;*/
+}
 .render
 {
-    margin-top:60px;
-    margin-bottom:60px; /**/
+    margin-top:60px;/**/
+    margin-bottom:60px; 
+    /*插入视图的高设为1000，使得整个body的高
+     超过一般情况下的窗口高度，
+     避免页脚出现在页面中间*/
     min-height:1000px;
 }
 img,.side-bar .list-group-item

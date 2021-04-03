@@ -29,12 +29,14 @@ namespace DAL
                     });
                 }
                 reader.Close();
+                reader.Dispose();
                 return all;
             }
             catch (SqlException ex)
             {
                 throw new Exception(ex.Message.ToString());
             }
+
         }
 
         public Department FindById(Int32 id)
@@ -56,6 +58,8 @@ namespace DAL
                     vo.Line = reader["line"].ToString();
 
                 }
+                reader.Close();
+                reader.Dispose();
                 return vo;
             }
             catch (SqlException ex)

@@ -15,42 +15,7 @@
         <small>已有账号？<a href="@Url.Action("Index","SysAdmin",new{})">登录</a></small>
     </h1>
     <!--查询选项卡-->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#IdcardEmpidSearch" data-toggle="tab">身份证手机职工号查询</a></li>
-        <li><a href="#NameSearch" data-toggle="tab">姓名查询</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade in active" id="IdcardEmpidSearch">
-            @using (Ajax.BeginForm("Search", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmp" }))
-            {
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号" />
-                        <div class="input-group-btn">
-                            <input type="submit" class="btn btn-default" value="查 询" />
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-        <div class="tab-pane fade" id="NameSearch">
-            @using (Ajax.BeginForm("SearchName", new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpByName" }))
-            {
-                <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="TxtSearch" placeholder="姓名" />
-                        <div class="input-group-btn">
-                            <input type="submit" class="btn btn-default" value="查 询" />
-                        </div>
-                    </div>
-                </div>
-            }
-            <div id="NameList"></div>          
-        </div>
-    </div>
-
-    <ol class="reg_error"></ol>
-    <div class="form-group" id="Info"></div>
+    @Html.Action("PartialSearch", "Employee")
 
     <!--验证-->
     <div id="Verify" style="display:none;">
@@ -99,4 +64,12 @@
         <input type="hidden" name="AdminName" id="AdminName" />
         <input type="hidden" name="rid" id="rid" />
     </form>
+
+    <script>
+        function Transmit(emp) {
+            $('#Empid').val(emp["Empid"]);
+           // alert(emp["Admin"] != null ? emp["Admin"]["LoginId"] : "没有")
+        }
+
+    </script>
 </div>

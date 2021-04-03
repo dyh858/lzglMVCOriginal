@@ -1,28 +1,4 @@
 ﻿$(function () {
-    //身份证手机职工号查询表单
-    $('#form0').validate({
-        errorLabelContainer: 'ol.reg_error',
-        rules: {
-            TxtSearch: {
-                required:true,
-            }
-        },
-        messages: {
-            TxtSearch: "查询类容不能为空！",
-        }
-    });
-    //姓名查询表单
-    $('#form1').validate({
-        errorLabelContainer: 'ol.reg_error',
-        rules: {
-            TxtSearch: {
-                required: true,
-            }
-        },
-        messages: {
-            TxtSearch: "查询类容不能为空！",
-        }
-    });
     //注册表单
     $('#FrmRegist').validate({
         rules: {
@@ -99,6 +75,7 @@ function ShowEmp() {
         $('#Verify').css('display', 'none');
     }
 }
+//根据姓名查询，返回emp集合
 function ShowEmpByName() {
     if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
         var list = JSON.parse($('#Info').html());
@@ -119,7 +96,7 @@ function ShowEmpByName() {
     }
 }
 
-$(document).delegate(".empItem", "click", function (e) {
+/*$(document).delegate(".empItem", "click", function (e) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -138,4 +115,4 @@ $(document).delegate(".empItem", "click", function (e) {
             alert(xhr.status + ':' + xhr.statusText);
         }
     });
-});
+});*/

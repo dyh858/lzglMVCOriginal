@@ -12,7 +12,6 @@ D:\C#\lzglMVCOriginal\LzglForm\bin\Debug\DAL.pdb
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.csprojResolveAssemblyReference.cache
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.FrmLogin.resources
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.FrmMain.resources
-D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.Properties.Resources.resources
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.csproj.GenerateResource.Cache
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.exe
 D:\C#\lzglMVCOriginal\LzglForm\obj\Debug\LzglForm.pdb

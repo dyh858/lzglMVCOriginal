@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Models.PostProp;
+
 namespace Models
 {
+    [Serializable]
     public class Post
     {
         public Int32 PostId {get;set;}

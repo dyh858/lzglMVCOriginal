@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Models;
 using Utils;
+
 namespace DAL
 {
     public class WageService

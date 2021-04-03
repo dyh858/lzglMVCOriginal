@@ -7,3 +7,4 @@ D:\C#\lzglMVCOriginal\Utils\bin\Debug\Utils.dll
 D:\C#\lzglMVCOriginal\Utils\bin\Debug\Utils.pdb
 D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.dll
 D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.pdb
+D:\C#\lzglMVCOriginal\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache

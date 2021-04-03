@@ -130,6 +130,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\RBAC\ActionsController.cs" />
     <Compile Include="Controllers\RBAC\GroupsController.cs" />
     <Compile Include="Controllers\RBAC\RightController.cs" />
@@ -408,6 +409,7 @@
     <Content Include="Scripts\layout.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\Post\index_post.js" />
     <Content Include="Scripts\Right\right_index.js" />
     <Content Include="Scripts\Right\right_tree_menu.js" />
     <Content Include="Scripts\Role\role_AllotGroupsIndex.js" />
@@ -465,6 +467,7 @@
     <Content Include="Views\Shared\PartialSearch.cshtml" />
     <Content Include="Views\SysAdmin\InvitationCodeView - 复制.cshtml" />
     <Content Include="Views\SysAdmin\Signup - 复制.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,4 +7,3 @@ D:\C#\lzglMVCOriginal\Models\bin\Debug\Models.dll
 D:\C#\lzglMVCOriginal\Models\bin\Debug\Models.pdb
 D:\C#\lzglMVCOriginal\Models\obj\Debug\Models.dll
 D:\C#\lzglMVCOriginal\Models\obj\Debug\Models.pdb
-D:\C#\lzglMVCOriginal\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache

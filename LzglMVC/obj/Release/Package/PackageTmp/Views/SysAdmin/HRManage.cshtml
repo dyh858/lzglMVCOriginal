@@ -10,55 +10,8 @@
         margin-top:60px;
     }
 </style>
-<div class="container-fluid">
-    <div class="col-sm-2">
-        <div id="right">
-            <div>
-                @{
-                    if (ViewBag.Groups != null)
-                    {
-                        foreach (Models.RBAC.Groups vo in ViewBag.Groups)
-                        {
-                    <div class="dropdown" id="@vo.Gid">
-                        <button class="btn btn-primary" data-toggle="dropdown" data-target="#@vo.Gid">
-                            @vo.Title
-                            @if (vo.AllActions.Count > 0)
-                            {
-                                <span class="caret"></span>
-                            }
-                        </button>
-                        <ul class="dropdown-menu">
-                            @{                                                                                                 
-                    if (vo.AllActions.Count > 0)
-                    {
-                        foreach (Models.RBAC.Actions act in vo.AllActions)
-                        {
-                                <li><a href="@act.Url">@act.Title</a></li>
-                                    }
-                                 }
-                            }
-                        </ul>
-                    </div>
-                }
-            }    
-                }
-            </div>
-        </div>
-        <div class="dropdown" id="dropdown">
-            <button class="btn btn-primary" id="btn" data-toggle="dropdown" data-target="#dropdown">
-                下拉菜单
-		<span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">首页</a></li>
-                <li><a href="#">资讯</a></li>
-                <li><a href="#">产品</a></li>
-                <li><a href="#">工资</a></li>
-            </ul>
-        </div>
-
-    </div>
-    <div class="col-sm-10" style="margin-top:70px;">
+<div class="container">
+        <div style="margin-top:70px;">
         <a href="@Url.Action("Index","Wage")">工资</a>
         <a href="@Url.Action("Index","Right")">权限</a>
         <a href="@Url.Action("Index","Role")">角色</a>
