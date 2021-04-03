@@ -1,0 +1,68 @@
+﻿@model Models.Post
+
+@{
+    ViewBag.Title = "Index";
+}
+@*3、bootstrap table组件以及中文包的引用*@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/Content/bootstrap-table/bootstrap-table.js"></script>
+<link href="~/Content/bootstrap-table/bootstrap-table.css" rel="stylesheet" />
+<script src="~/Content/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="~/Scripts/Post/index_post.js"></script>
+<style>
+    #post{
+        display:flex;
+        flex-direction:row;
+    }
+    #dept{
+        width:250px;
+        border:solid black 1px;
+        position:relative;
+    }
+    #drag{
+        width:10px;
+        height:100%;
+        background:black;
+        position:absolute;
+        border-radius:5px 0 0 5px;
+        right:0;
+        
+    }
+    #post .layout-item{
+        
+    }
+</style>
+<h2>职位管理</h2>
+<div id="post">
+    <div id="dept" class="layout-item">
+        <div>hello</div>
+        <div id="drag"></div>
+    </div>
+    <table class="table layout-item">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" v-model="checkAll" v-on:click="checkALL" id="all" />
+                </th>
+                <th>序号</th>
+                <th>职位名称</th>
+                <th>部门</th>
+                <th>班组</th>
+                <th>职位性质</th>
+                <th>职位序列</th>
+                <th>职位等级</th>
+            </tr>
+        </thead>
+        <tr v-for="(v,i) in lists" key="v.id">
+            <input type="hidden" name="PostId" v-bind:value="v.PostId" />
+            <th><input type="checkbox" name="check" v-on:click="checkItem" /></th>
+            <td>{{i+1}}</td>
+            <td>{{v.postname}}</td>
+            <td>{{v.depname}}</td>
+            <td>{{v.team}}</td>
+            <td>{{v.prop}}</td>
+            <td>{{v.sequence}}</td>
+            <td>{{v.grade}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,114 @@
+﻿@model Models.Employee
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<style>
+    #NameList{
+        position:absolute;
+        z-index:9999;
+        display:none;
+        left:20px;
+        top:34px;
+        clear:both;
+    }
+    #error-info {
+        position: absolute;
+        z-index: 9999;
+        top:34px;
+        left:20px;
+        color:red;
+    }
+    #partial {
+        position: relative;
+        /*border: 1px solid red;
+        */
+    }
+    #search-result {
+        width:100%;
+        height:34px;
+    }
+</style>
+<!--查询分布视图：必须在使用页面定义Transmit函数，然后将查询结果的Employee以JSON对象格式传过去-->
+<div id="partial">
+    @using (Ajax.BeginForm("Search", "SysAdmin", new { }, new AjaxOptions { UpdateTargetId = "Info", OnSuccess = "ShowEmpList" }, new{id="frm-search"}))
+    {
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" name="TxtSearch" placeholder="身份证号码/电话号码/职工号/姓名" />
+                <div class="input-group-btn">
+                    <input type="submit" class="btn btn-default" value="查 询" />
+                </div>
+            </div>
+        </div>
+    }
+    <div id="search-result" class="list-group"></div>
+    <div id="Info" style="display:none;"></div>
+    <div id="NameList" class="list-group"></div>
+    <div id="error-info"></div>
+    
+</div>
+
+<script>
+    $(function () {
+        //身份证手机职工号查询表单
+        $('#frm-search').validate({
+            errorLabelContainer: '#error-info',
+            rules: {
+                TxtSearch: {
+                    required: true,
+                }
+            },
+            messages: {
+                TxtSearch: "查询类容不能为空！",
+            }
+        });
+    });
+    //根据姓名查询，返回emp集合
+    function ShowEmpList() {
+        if ($('#Info').html() != "查询失败！") {     //控制器返回的数据放在“Info”这个元素里
+            var list = JSON.parse($('#Info').html());
+            $('#NameList .list-group-item').remove();     //清空列表
+            $('#search-result .list-group-item').remove();
+            var item = "";
+            for (var i = 0; i < list.length; i++) {
+                item = '<a href="#" class="empItem list-group-item" id="' + i + '" name="' + list[i]["Name"] +
+                    '">' +
+                    list[i]["Name"] + ',' +
+                    list[i]["Gender"] + ',' +
+                    list[i]["Idcard"] + ',' +
+                    list[i]["Position"]["Dept"]["DepName"] +
+                    '</a>';
+                if (list.length == 1) {
+                    $('#search-result').append(item).children('a').removeClass("empItem");
+                    //$('#search-result a').removeClass("empItem");
+                    Transmit(list[i]);//传JSON对象给外接函数
+                } else {
+                    $('#NameList').append(item);
+                    $('#NameList').css('display', 'block');
+                }
+            }
+        } else {
+            $('#search-result').html('没有查询结果！');
+        }
+        $("[type=submit]").prop("disabled", false);
+    }
+    $(document).delegate(".empItem", "click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        $('#NameList').css('display', 'none');
+        $('#search-result .empItem').remove();
+        $(this).removeClass("empItem");
+        $('#search-result').append($(this));
+        Transmit(JSON.parse($('#Info').html())[$(this).attr('id')]);//传JSON对象给外接函数
+    });
+    /*$(document).delegate("#frm-search", "submit", function (e) {
+        e.preventDefault();
+        $("[type=submit]").prop("disabled", true);
+        return confirm;
+    })*/
+    function confirm() {
+        return false;
+    }
+</script>
